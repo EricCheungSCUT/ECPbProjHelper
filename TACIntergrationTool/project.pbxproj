@@ -1,0 +1,1203 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D253B400A6BCF5D3CEC874C /* Pods_TACSamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2DA56F66E260FBD2F00AFB /* Pods_TACSamples.framework */; };
+		1A0BB76D1FEBA978002F18D4 /* tac_services_configurations_wechat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A0BB76B1FEBA977002F18D4 /* tac_services_configurations_wechat.plist */; };
+		1A0BB76E1FEBA978002F18D4 /* tac_services_configurations_qq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A0BB76C1FEBA978002F18D4 /* tac_services_configurations_qq.plist */; };
+		1A0FDF681FD6407D0002DD62 /* TACAnalyticsDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FDF661FD6407D0002DD62 /* TACAnalyticsDemoViewController.m */; };
+		1A0FDF691FD6407D0002DD62 /* TACAnalyticsDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0FDF671FD6407D0002DD62 /* TACAnalyticsDemoViewController.xib */; };
+		1A0FDF721FD640BA0002DD62 /* TACMessagingDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FDF701FD640BA0002DD62 /* TACMessagingDemoViewController.m */; };
+		1A0FDF731FD640BA0002DD62 /* TACMessagingDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0FDF711FD640BA0002DD62 /* TACMessagingDemoViewController.xib */; };
+		1A0FDF771FD640D00002DD62 /* TACStorageDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FDF751FD640D00002DD62 /* TACStorageDemoViewController.m */; };
+		1A0FDF781FD640D00002DD62 /* TACStorageDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0FDF761FD640D00002DD62 /* TACStorageDemoViewController.xib */; };
+		1A16AE8A1FCC06C700685E77 /* TACUploadObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A16AE891FCC06C700685E77 /* TACUploadObjectTests.m */; };
+		1A1BDDA5207DB77000EE5B40 /* TACSocialShareDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BDDA3207DB77000EE5B40 /* TACSocialShareDemoViewController.m */; };
+		1A1BDDA6207DB77000EE5B40 /* TACSocialShareDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BDDA4207DB77000EE5B40 /* TACSocialShareDemoViewController.xib */; };
+		1A40B7F7200C84FF003893FF /* TACPaymentDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B7F5200C84FF003893FF /* TACPaymentDemoViewController.m */; };
+		1A40B7F8200C84FF003893FF /* TACPaymentDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A40B7F6200C84FF003893FF /* TACPaymentDemoViewController.xib */; };
+		1A40B805200C9B5E003893FF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B801200C9B5D003893FF /* MBProgressHUD.m */; };
+		1A40B806200C9B5E003893FF /* OpenMidasTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A40B802200C9B5D003893FF /* OpenMidasTool.m */; };
+		1A437CF72044F247008256FC /* CRLCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CCC2044F247008256FC /* CRLCrash.m */; };
+		1A437CF82044F247008256FC /* CRLCrashAbort.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CCE2044F247008256FC /* CRLCrashAbort.m */; };
+		1A437CF92044F247008256FC /* CRLCrashAsyncSafeThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CD02044F247008256FC /* CRLCrashAsyncSafeThread.m */; };
+		1A437CFA2044F247008256FC /* CRLCrashCorruptMalloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CD22044F247008256FC /* CRLCrashCorruptMalloc.m */; };
+		1A437CFB2044F247008256FC /* CRLCrashCorruptObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CD42044F247008256FC /* CRLCrashCorruptObjC.m */; };
+		1A437CFC2044F247008256FC /* CRLCrashCXXException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CD62044F247008256FC /* CRLCrashCXXException.mm */; };
+		1A437CFD2044F247008256FC /* CRLCrashGarbage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CD82044F247008256FC /* CRLCrashGarbage.m */; };
+		1A437CFF2044F247008256FC /* CRLCrashNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CDC2044F247008256FC /* CRLCrashNSLog.m */; };
+		1A437D002044F247008256FC /* CRLCrashNULL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CDE2044F247008256FC /* CRLCrashNULL.m */; };
+		1A437D012044F247008256FC /* CRLCrashNXPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CE02044F247008256FC /* CRLCrashNXPage.m */; };
+		1A437D022044F247008256FC /* CRLCrashObjCException.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CE22044F247008256FC /* CRLCrashObjCException.m */; };
+		1A437D032044F247008256FC /* CRLCrashObjCMsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CE42044F247008256FC /* CRLCrashObjCMsgSend.m */; };
+		1A437D042044F247008256FC /* CRLCrashOverwriteLinkRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CE62044F247008256FC /* CRLCrashOverwriteLinkRegister.m */; };
+		1A437D052044F247008256FC /* CRLCrashPrivInst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CE82044F247008256FC /* CRLCrashPrivInst.m */; };
+		1A437D062044F247008256FC /* CRLCrashReleasedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CEA2044F247008256FC /* CRLCrashReleasedObject.m */; };
+		1A437D072044F247008256FC /* CRLCrashROPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CEC2044F247008256FC /* CRLCrashROPage.m */; };
+		1A437D082044F247008256FC /* CRLCrashSmashStackBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CEE2044F247008256FC /* CRLCrashSmashStackBottom.m */; };
+		1A437D092044F247008256FC /* CRLCrashSmashStackTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CF02044F247008256FC /* CRLCrashSmashStackTop.m */; };
+		1A437D0A2044F247008256FC /* CRLCrashStackGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CF22044F247008256FC /* CRLCrashStackGuard.m */; };
+		1A437D0B2044F247008256FC /* CRLCrashTrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CF42044F247008256FC /* CRLCrashTrap.m */; };
+		1A437D0C2044F247008256FC /* CRLCrashUndefInst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437CF62044F247008256FC /* CRLCrashUndefInst.m */; };
+		1A437D102044F2DA008256FC /* TACCrashMockListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437D0E2044F2DA008256FC /* TACCrashMockListTableViewController.m */; };
+		1A437D112044F2DA008256FC /* TACCrashMockListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A437D0F2044F2DA008256FC /* TACCrashMockListTableViewController.xib */; };
+		1A437D152044F4C3008256FC /* TACCrashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A437D132044F4C3008256FC /* TACCrashDetailViewController.m */; };
+		1A437D162044F4C3008256FC /* TACCrashDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A437D142044F4C3008256FC /* TACCrashDetailViewController.xib */; };
+		1A894DFD1FD63A53007069E9 /* TACServicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A894DFC1FD63A53007069E9 /* TACServicesTableViewController.m */; };
+		1A973CD71FDA99660056AD9E /* TACSoicalDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A973CD51FDA99660056AD9E /* TACSoicalDemoViewController.m */; };
+		1A973CD81FDA99660056AD9E /* TACSoicalDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A973CD61FDA99660056AD9E /* TACSoicalDemoViewController.xib */; };
+		1AB143F11E601E0500830F93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB143F01E601E0500830F93 /* main.m */; };
+		1AB143F41E601E0500830F93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB143F31E601E0500830F93 /* AppDelegate.m */; };
+		1AB143F71E601E0500830F93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB143F61E601E0500830F93 /* ViewController.m */; };
+		1AB143FA1E601E0500830F93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB143F81E601E0500830F93 /* Main.storyboard */; };
+		1AB143FC1E601E0500830F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB143FB1E601E0500830F93 /* Assets.xcassets */; };
+		1AB143FF1E601E0500830F93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB143FD1E601E0500830F93 /* LaunchScreen.storyboard */; };
+		1AB1440A1E601E0500830F93 /* TACSamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB144091E601E0500830F93 /* TACSamplesTests.m */; };
+		1AB144151E601E0500830F93 /* TACSamplesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB144141E601E0500830F93 /* TACSamplesUITests.m */; };
+		1AEA914F1FB9947900038FB5 /* TACStoragePathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA914E1FB9947900038FB5 /* TACStoragePathTest.m */; };
+		2FBE7F398F98ED0B64BA9A5C /* Pods_TACSamplesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A00E88A52BAD76CE80AA40 /* Pods_TACSamplesTests.framework */; };
+		7FE97924207C983C00296F26 /* TACAdTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE97923207C983C00296F26 /* TACAdTrackerViewController.m */; };
+		7FE97929207CBAD900296F26 /* TACHybrideDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE97927207CBAD900296F26 /* TACHybrideDemoViewController.m */; };
+		7FE9792A207CBAD900296F26 /* TACHybrideDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE97928207CBAD900296F26 /* TACHybrideDemoViewController.xib */; };
+		7FE97931207CBE9000296F26 /* TACWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE9792F207CBE9000296F26 /* TACWebViewController.m */; };
+		7FE97936207CBEA600296F26 /* TACWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE97934207CBEA600296F26 /* TACWKWebViewController.m */; };
+		7FE9793E207CE0BB00296F26 /* app_link_h5_stats.js in Resources */ = {isa = PBXBuildFile; fileRef = 7FE9793B207CE0BA00296F26 /* app_link_h5_stats.js */; };
+		7FE9793F207CE0BB00296F26 /* app_link_h5_page1.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FE9793C207CE0BB00296F26 /* app_link_h5_page1.html */; };
+		7FE97940207CE0BB00296F26 /* app_link_h5.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FE9793D207CE0BB00296F26 /* app_link_h5.html */; };
+		A87452E1207B176100101228 /* testVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A839DBD3207A509E009F399B /* testVideo.mp4 */; };
+		A887895620450F1000511D03 /* tac_services_configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = A887895420450F1000511D03 /* tac_services_configurations.plist */; };
+		A89881EA2074F650009E540C /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = A89881E92074F650009E540C /* test.png */; };
+		A89881EE2079F2B7009E540C /* TestThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = A89881ED2079F2B6009E540C /* TestThumb.png */; };
+		A8A4182B204441E400EA5E0F /* TACAnalyticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4182A204441E400EA5E0F /* TACAnalyticsTests.m */; };
+		F9F591FD8226FB24A034B275 /* Pods_TACSamplesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC3966107F4CE5125186B1F /* Pods_TACSamplesUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AB144061E601E0500830F93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AB143E41E601E0500830F93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AB143EB1E601E0500830F93;
+			remoteInfo = TACSamples;
+		};
+		1AB144111E601E0500830F93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AB143E41E601E0500830F93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AB143EB1E601E0500830F93;
+			remoteInfo = TACSamples;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0ACF749837AF9CC2F85D9ABB /* Pods-TACSamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TACSamples.release.xcconfig"; path = "Pods/Target Support Files/Pods-TACSamples/Pods-TACSamples.release.xcconfig"; sourceTree = "<group>"; };
+		1A0BB76B1FEBA977002F18D4 /* tac_services_configurations_wechat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tac_services_configurations_wechat.plist; sourceTree = "<group>"; };
+		1A0BB76C1FEBA978002F18D4 /* tac_services_configurations_qq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tac_services_configurations_qq.plist; sourceTree = "<group>"; };
+		1A0FDF651FD6407D0002DD62 /* TACAnalyticsDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACAnalyticsDemoViewController.h; sourceTree = "<group>"; };
+		1A0FDF661FD6407D0002DD62 /* TACAnalyticsDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACAnalyticsDemoViewController.m; sourceTree = "<group>"; };
+		1A0FDF671FD6407D0002DD62 /* TACAnalyticsDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACAnalyticsDemoViewController.xib; sourceTree = "<group>"; };
+		1A0FDF6F1FD640BA0002DD62 /* TACMessagingDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACMessagingDemoViewController.h; sourceTree = "<group>"; };
+		1A0FDF701FD640BA0002DD62 /* TACMessagingDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACMessagingDemoViewController.m; sourceTree = "<group>"; };
+		1A0FDF711FD640BA0002DD62 /* TACMessagingDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACMessagingDemoViewController.xib; sourceTree = "<group>"; };
+		1A0FDF741FD640D00002DD62 /* TACStorageDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACStorageDemoViewController.h; sourceTree = "<group>"; };
+		1A0FDF751FD640D00002DD62 /* TACStorageDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACStorageDemoViewController.m; sourceTree = "<group>"; };
+		1A0FDF761FD640D00002DD62 /* TACStorageDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACStorageDemoViewController.xib; sourceTree = "<group>"; };
+		1A16AE891FCC06C700685E77 /* TACUploadObjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACUploadObjectTests.m; sourceTree = "<group>"; };
+		1A1BDDA2207DB77000EE5B40 /* TACSocialShareDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACSocialShareDemoViewController.h; sourceTree = "<group>"; };
+		1A1BDDA3207DB77000EE5B40 /* TACSocialShareDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACSocialShareDemoViewController.m; sourceTree = "<group>"; };
+		1A1BDDA4207DB77000EE5B40 /* TACSocialShareDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TACSocialShareDemoViewController.xib; sourceTree = "<group>"; };
+		1A25DF641FBEBC78009B6BEE /* TACSamples.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TACSamples.entitlements; sourceTree = "<group>"; };
+		1A40B7F4200C84FF003893FF /* TACPaymentDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACPaymentDemoViewController.h; sourceTree = "<group>"; };
+		1A40B7F5200C84FF003893FF /* TACPaymentDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACPaymentDemoViewController.m; sourceTree = "<group>"; };
+		1A40B7F6200C84FF003893FF /* TACPaymentDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACPaymentDemoViewController.xib; sourceTree = "<group>"; };
+		1A40B801200C9B5D003893FF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		1A40B802200C9B5D003893FF /* OpenMidasTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenMidasTool.m; sourceTree = "<group>"; };
+		1A40B803200C9B5D003893FF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		1A40B804200C9B5E003893FF /* OpenMidasTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenMidasTool.h; sourceTree = "<group>"; };
+		1A437CCB2044F247008256FC /* CRLCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrash.h; sourceTree = "<group>"; };
+		1A437CCC2044F247008256FC /* CRLCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrash.m; sourceTree = "<group>"; };
+		1A437CCD2044F247008256FC /* CRLCrashAbort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashAbort.h; sourceTree = "<group>"; };
+		1A437CCE2044F247008256FC /* CRLCrashAbort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashAbort.m; sourceTree = "<group>"; };
+		1A437CCF2044F247008256FC /* CRLCrashAsyncSafeThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashAsyncSafeThread.h; sourceTree = "<group>"; };
+		1A437CD02044F247008256FC /* CRLCrashAsyncSafeThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashAsyncSafeThread.m; sourceTree = "<group>"; };
+		1A437CD12044F247008256FC /* CRLCrashCorruptMalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashCorruptMalloc.h; sourceTree = "<group>"; };
+		1A437CD22044F247008256FC /* CRLCrashCorruptMalloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashCorruptMalloc.m; sourceTree = "<group>"; };
+		1A437CD32044F247008256FC /* CRLCrashCorruptObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashCorruptObjC.h; sourceTree = "<group>"; };
+		1A437CD42044F247008256FC /* CRLCrashCorruptObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashCorruptObjC.m; sourceTree = "<group>"; };
+		1A437CD52044F247008256FC /* CRLCrashCXXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashCXXException.h; sourceTree = "<group>"; };
+		1A437CD62044F247008256FC /* CRLCrashCXXException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRLCrashCXXException.mm; sourceTree = "<group>"; };
+		1A437CD72044F247008256FC /* CRLCrashGarbage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashGarbage.h; sourceTree = "<group>"; };
+		1A437CD82044F247008256FC /* CRLCrashGarbage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashGarbage.m; sourceTree = "<group>"; };
+		1A437CDB2044F247008256FC /* CRLCrashNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashNSLog.h; sourceTree = "<group>"; };
+		1A437CDC2044F247008256FC /* CRLCrashNSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashNSLog.m; sourceTree = "<group>"; };
+		1A437CDD2044F247008256FC /* CRLCrashNULL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashNULL.h; sourceTree = "<group>"; };
+		1A437CDE2044F247008256FC /* CRLCrashNULL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashNULL.m; sourceTree = "<group>"; };
+		1A437CDF2044F247008256FC /* CRLCrashNXPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashNXPage.h; sourceTree = "<group>"; };
+		1A437CE02044F247008256FC /* CRLCrashNXPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashNXPage.m; sourceTree = "<group>"; };
+		1A437CE12044F247008256FC /* CRLCrashObjCException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashObjCException.h; sourceTree = "<group>"; };
+		1A437CE22044F247008256FC /* CRLCrashObjCException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashObjCException.m; sourceTree = "<group>"; };
+		1A437CE32044F247008256FC /* CRLCrashObjCMsgSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashObjCMsgSend.h; sourceTree = "<group>"; };
+		1A437CE42044F247008256FC /* CRLCrashObjCMsgSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashObjCMsgSend.m; sourceTree = "<group>"; };
+		1A437CE52044F247008256FC /* CRLCrashOverwriteLinkRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashOverwriteLinkRegister.h; sourceTree = "<group>"; };
+		1A437CE62044F247008256FC /* CRLCrashOverwriteLinkRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashOverwriteLinkRegister.m; sourceTree = "<group>"; };
+		1A437CE72044F247008256FC /* CRLCrashPrivInst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashPrivInst.h; sourceTree = "<group>"; };
+		1A437CE82044F247008256FC /* CRLCrashPrivInst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashPrivInst.m; sourceTree = "<group>"; };
+		1A437CE92044F247008256FC /* CRLCrashReleasedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashReleasedObject.h; sourceTree = "<group>"; };
+		1A437CEA2044F247008256FC /* CRLCrashReleasedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashReleasedObject.m; sourceTree = "<group>"; };
+		1A437CEB2044F247008256FC /* CRLCrashROPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashROPage.h; sourceTree = "<group>"; };
+		1A437CEC2044F247008256FC /* CRLCrashROPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashROPage.m; sourceTree = "<group>"; };
+		1A437CED2044F247008256FC /* CRLCrashSmashStackBottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashSmashStackBottom.h; sourceTree = "<group>"; };
+		1A437CEE2044F247008256FC /* CRLCrashSmashStackBottom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashSmashStackBottom.m; sourceTree = "<group>"; };
+		1A437CEF2044F247008256FC /* CRLCrashSmashStackTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashSmashStackTop.h; sourceTree = "<group>"; };
+		1A437CF02044F247008256FC /* CRLCrashSmashStackTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashSmashStackTop.m; sourceTree = "<group>"; };
+		1A437CF12044F247008256FC /* CRLCrashStackGuard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashStackGuard.h; sourceTree = "<group>"; };
+		1A437CF22044F247008256FC /* CRLCrashStackGuard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashStackGuard.m; sourceTree = "<group>"; };
+		1A437CF32044F247008256FC /* CRLCrashTrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashTrap.h; sourceTree = "<group>"; };
+		1A437CF42044F247008256FC /* CRLCrashTrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashTrap.m; sourceTree = "<group>"; };
+		1A437CF52044F247008256FC /* CRLCrashUndefInst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLCrashUndefInst.h; sourceTree = "<group>"; };
+		1A437CF62044F247008256FC /* CRLCrashUndefInst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashUndefInst.m; sourceTree = "<group>"; };
+		1A437D0D2044F2DA008256FC /* TACCrashMockListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACCrashMockListTableViewController.h; sourceTree = "<group>"; };
+		1A437D0E2044F2DA008256FC /* TACCrashMockListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACCrashMockListTableViewController.m; sourceTree = "<group>"; };
+		1A437D0F2044F2DA008256FC /* TACCrashMockListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACCrashMockListTableViewController.xib; sourceTree = "<group>"; };
+		1A437D122044F4C3008256FC /* TACCrashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACCrashDetailViewController.h; sourceTree = "<group>"; };
+		1A437D132044F4C3008256FC /* TACCrashDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACCrashDetailViewController.m; sourceTree = "<group>"; };
+		1A437D142044F4C3008256FC /* TACCrashDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACCrashDetailViewController.xib; sourceTree = "<group>"; };
+		1A894DFB1FD63A53007069E9 /* TACServicesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACServicesTableViewController.h; sourceTree = "<group>"; };
+		1A894DFC1FD63A53007069E9 /* TACServicesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACServicesTableViewController.m; sourceTree = "<group>"; };
+		1A973CD41FDA99660056AD9E /* TACSoicalDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACSoicalDemoViewController.h; sourceTree = "<group>"; };
+		1A973CD51FDA99660056AD9E /* TACSoicalDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACSoicalDemoViewController.m; sourceTree = "<group>"; };
+		1A973CD61FDA99660056AD9E /* TACSoicalDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACSoicalDemoViewController.xib; sourceTree = "<group>"; };
+		1AB143EC1E601E0500830F93 /* TACSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TACSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB143F01E601E0500830F93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1AB143F21E601E0500830F93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1AB143F31E601E0500830F93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1AB143F51E601E0500830F93 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1AB143F61E601E0500830F93 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1AB143F91E601E0500830F93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AB143FB1E601E0500830F93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AB143FE1E601E0500830F93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1AB144001E601E0500830F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB144051E601E0500830F93 /* TACSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TACSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB144091E601E0500830F93 /* TACSamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACSamplesTests.m; sourceTree = "<group>"; };
+		1AB1440B1E601E0500830F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB144101E601E0500830F93 /* TACSamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TACSamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB144141E601E0500830F93 /* TACSamplesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACSamplesUITests.m; sourceTree = "<group>"; };
+		1AB144161E601E0500830F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AEA914E1FB9947900038FB5 /* TACStoragePathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACStoragePathTest.m; sourceTree = "<group>"; };
+		24857FC07CBCD7F9AEA765D1 /* Pods-TACSamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TACSamples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TACSamples/Pods-TACSamples.debug.xcconfig"; sourceTree = "<group>"; };
+		3BDD17E5286E3A74FBB78A20 /* Pods-TACSamplesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TACSamplesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TACSamplesUITests/Pods-TACSamplesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FC041451C423AF0B7A014E8 /* Pods-TACSamplesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TACSamplesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TACSamplesUITests/Pods-TACSamplesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F837F222071DC9000CC9F30 /* libTACCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTACCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F837F232071DE4100CC9F30 /* libMTAHybrid.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMTAHybrid.a; path = ../../BisnessComponents/ApplicationCloud/TACCore/Pod/MTA/plugin/MTAHybrid/libMTAHybrid.a; sourceTree = "<group>"; };
+		7F837F242071DE4100CC9F30 /* MTAHybrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTAHybrid.h; path = ../../BisnessComponents/ApplicationCloud/TACCore/Pod/MTA/plugin/MTAHybrid/MTAHybrid.h; sourceTree = "<group>"; };
+		7FE97922207C983C00296F26 /* TACAdTrackerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACAdTrackerViewController.h; sourceTree = "<group>"; };
+		7FE97923207C983C00296F26 /* TACAdTrackerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACAdTrackerViewController.m; sourceTree = "<group>"; };
+		7FE97926207CBAD900296F26 /* TACHybrideDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACHybrideDemoViewController.h; sourceTree = "<group>"; };
+		7FE97927207CBAD900296F26 /* TACHybrideDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACHybrideDemoViewController.m; sourceTree = "<group>"; };
+		7FE97928207CBAD900296F26 /* TACHybrideDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TACHybrideDemoViewController.xib; sourceTree = "<group>"; };
+		7FE9792E207CBE9000296F26 /* TACWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACWebViewController.h; sourceTree = "<group>"; };
+		7FE9792F207CBE9000296F26 /* TACWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACWebViewController.m; sourceTree = "<group>"; };
+		7FE97933207CBEA600296F26 /* TACWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACWKWebViewController.h; sourceTree = "<group>"; };
+		7FE97934207CBEA600296F26 /* TACWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACWKWebViewController.m; sourceTree = "<group>"; };
+		7FE9793B207CE0BA00296F26 /* app_link_h5_stats.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app_link_h5_stats.js; sourceTree = "<group>"; };
+		7FE9793C207CE0BB00296F26 /* app_link_h5_page1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = app_link_h5_page1.html; sourceTree = "<group>"; };
+		7FE9793D207CE0BB00296F26 /* app_link_h5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = app_link_h5.html; sourceTree = "<group>"; };
+		8D8FC13CC9EA1DF1486AF52D /* Pods-TACSamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TACSamplesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TACSamplesTests/Pods-TACSamplesTests.release.xcconfig"; sourceTree = "<group>"; };
+		90A00E88A52BAD76CE80AA40 /* Pods_TACSamplesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TACSamplesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18E59466975E15C5318D105 /* Pods-TACSamplesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TACSamplesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TACSamplesTests/Pods-TACSamplesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A839DBD3207A509E009F399B /* testVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = testVideo.mp4; sourceTree = "<group>"; };
+		A87452E9207B257300101228 /* TACSocialShareDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACSocialShareDemoViewController.h; sourceTree = "<group>"; };
+		A87452EA207B257300101228 /* TACSocialShareDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACSocialShareDemoViewController.m; sourceTree = "<group>"; };
+		A87452EB207B257300101228 /* TACSocialShareDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TACSocialShareDemoViewController.xib; sourceTree = "<group>"; };
+		A887895420450F1000511D03 /* tac_services_configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tac_services_configurations.plist; sourceTree = "<group>"; };
+		A89881E92074F650009E540C /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		A89881ED2079F2B6009E540C /* TestThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestThumb.png; sourceTree = "<group>"; };
+		A8A4182A204441E400EA5E0F /* TACAnalyticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACAnalyticsTests.m; sourceTree = "<group>"; };
+		AFC3966107F4CE5125186B1F /* Pods_TACSamplesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TACSamplesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB2DA56F66E260FBD2F00AFB /* Pods_TACSamples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TACSamples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AB143E91E601E0500830F93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D253B400A6BCF5D3CEC874C /* Pods_TACSamples.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AB144021E601E0500830F93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FBE7F398F98ED0B64BA9A5C /* Pods_TACSamplesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AB1440D1E601E0500830F93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F591FD8226FB24A034B275 /* Pods_TACSamplesUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0397D0F510EFF7A4F524E449 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F837F232071DE4100CC9F30 /* libMTAHybrid.a */,
+				7F837F242071DE4100CC9F30 /* MTAHybrid.h */,
+				7F837F222071DC9000CC9F30 /* libTACCore.a */,
+				FB2DA56F66E260FBD2F00AFB /* Pods_TACSamples.framework */,
+				90A00E88A52BAD76CE80AA40 /* Pods_TACSamplesTests.framework */,
+				AFC3966107F4CE5125186B1F /* Pods_TACSamplesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A0FDF601FD640500002DD62 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A1BDDA1207DB77000EE5B40 /* SocialShare */,
+				7FE97925207CBAB400296F26 /* hybrid */,
+				7FE97921207C981900296F26 /* Adtracker */,
+				A87452E8207B257300101228 /* SocialShare */,
+				1A40B7F0200C84B3003893FF /* Payment */,
+				1A973CD31FDA99560056AD9E /* Social */,
+				1A0FDF611FD640500002DD62 /* Analytics */,
+				1A0FDF621FD640500002DD62 /* Crash */,
+				1A0FDF631FD640500002DD62 /* Messaging */,
+				1A0FDF641FD640500002DD62 /* Storage */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1A0FDF611FD640500002DD62 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				1A0FDF651FD6407D0002DD62 /* TACAnalyticsDemoViewController.h */,
+				1A0FDF661FD6407D0002DD62 /* TACAnalyticsDemoViewController.m */,
+				1A0FDF671FD6407D0002DD62 /* TACAnalyticsDemoViewController.xib */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		1A0FDF621FD640500002DD62 /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				1A437CCA2044F247008256FC /* CrashProbe */,
+				1A437D0D2044F2DA008256FC /* TACCrashMockListTableViewController.h */,
+				1A437D0E2044F2DA008256FC /* TACCrashMockListTableViewController.m */,
+				1A437D0F2044F2DA008256FC /* TACCrashMockListTableViewController.xib */,
+				1A437D122044F4C3008256FC /* TACCrashDetailViewController.h */,
+				1A437D132044F4C3008256FC /* TACCrashDetailViewController.m */,
+				1A437D142044F4C3008256FC /* TACCrashDetailViewController.xib */,
+			);
+			path = Crash;
+			sourceTree = "<group>";
+		};
+		1A0FDF631FD640500002DD62 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				1A0FDF6F1FD640BA0002DD62 /* TACMessagingDemoViewController.h */,
+				1A0FDF701FD640BA0002DD62 /* TACMessagingDemoViewController.m */,
+				1A0FDF711FD640BA0002DD62 /* TACMessagingDemoViewController.xib */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		1A0FDF641FD640500002DD62 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				1A0FDF741FD640D00002DD62 /* TACStorageDemoViewController.h */,
+				1A0FDF751FD640D00002DD62 /* TACStorageDemoViewController.m */,
+				1A0FDF761FD640D00002DD62 /* TACStorageDemoViewController.xib */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		1A1BDDA1207DB77000EE5B40 /* SocialShare */ = {
+			isa = PBXGroup;
+			children = (
+				1A1BDDA2207DB77000EE5B40 /* TACSocialShareDemoViewController.h */,
+				1A1BDDA3207DB77000EE5B40 /* TACSocialShareDemoViewController.m */,
+				1A1BDDA4207DB77000EE5B40 /* TACSocialShareDemoViewController.xib */,
+			);
+			path = SocialShare;
+			sourceTree = "<group>";
+		};
+		1A40B7F0200C84B3003893FF /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				1A40B803200C9B5D003893FF /* MBProgressHUD.h */,
+				1A40B801200C9B5D003893FF /* MBProgressHUD.m */,
+				1A40B804200C9B5E003893FF /* OpenMidasTool.h */,
+				1A40B802200C9B5D003893FF /* OpenMidasTool.m */,
+				1A40B7F4200C84FF003893FF /* TACPaymentDemoViewController.h */,
+				1A40B7F5200C84FF003893FF /* TACPaymentDemoViewController.m */,
+				1A40B7F6200C84FF003893FF /* TACPaymentDemoViewController.xib */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		1A437CCA2044F247008256FC /* CrashProbe */ = {
+			isa = PBXGroup;
+			children = (
+				1A437CCB2044F247008256FC /* CRLCrash.h */,
+				1A437CCC2044F247008256FC /* CRLCrash.m */,
+				1A437CCD2044F247008256FC /* CRLCrashAbort.h */,
+				1A437CCE2044F247008256FC /* CRLCrashAbort.m */,
+				1A437CCF2044F247008256FC /* CRLCrashAsyncSafeThread.h */,
+				1A437CD02044F247008256FC /* CRLCrashAsyncSafeThread.m */,
+				1A437CD12044F247008256FC /* CRLCrashCorruptMalloc.h */,
+				1A437CD22044F247008256FC /* CRLCrashCorruptMalloc.m */,
+				1A437CD32044F247008256FC /* CRLCrashCorruptObjC.h */,
+				1A437CD42044F247008256FC /* CRLCrashCorruptObjC.m */,
+				1A437CD52044F247008256FC /* CRLCrashCXXException.h */,
+				1A437CD62044F247008256FC /* CRLCrashCXXException.mm */,
+				1A437CD72044F247008256FC /* CRLCrashGarbage.h */,
+				1A437CD82044F247008256FC /* CRLCrashGarbage.m */,
+				1A437CDB2044F247008256FC /* CRLCrashNSLog.h */,
+				1A437CDC2044F247008256FC /* CRLCrashNSLog.m */,
+				1A437CDD2044F247008256FC /* CRLCrashNULL.h */,
+				1A437CDE2044F247008256FC /* CRLCrashNULL.m */,
+				1A437CDF2044F247008256FC /* CRLCrashNXPage.h */,
+				1A437CE02044F247008256FC /* CRLCrashNXPage.m */,
+				1A437CE12044F247008256FC /* CRLCrashObjCException.h */,
+				1A437CE22044F247008256FC /* CRLCrashObjCException.m */,
+				1A437CE32044F247008256FC /* CRLCrashObjCMsgSend.h */,
+				1A437CE42044F247008256FC /* CRLCrashObjCMsgSend.m */,
+				1A437CE52044F247008256FC /* CRLCrashOverwriteLinkRegister.h */,
+				1A437CE62044F247008256FC /* CRLCrashOverwriteLinkRegister.m */,
+				1A437CE72044F247008256FC /* CRLCrashPrivInst.h */,
+				1A437CE82044F247008256FC /* CRLCrashPrivInst.m */,
+				1A437CE92044F247008256FC /* CRLCrashReleasedObject.h */,
+				1A437CEA2044F247008256FC /* CRLCrashReleasedObject.m */,
+				1A437CEB2044F247008256FC /* CRLCrashROPage.h */,
+				1A437CEC2044F247008256FC /* CRLCrashROPage.m */,
+				1A437CED2044F247008256FC /* CRLCrashSmashStackBottom.h */,
+				1A437CEE2044F247008256FC /* CRLCrashSmashStackBottom.m */,
+				1A437CEF2044F247008256FC /* CRLCrashSmashStackTop.h */,
+				1A437CF02044F247008256FC /* CRLCrashSmashStackTop.m */,
+				1A437CF12044F247008256FC /* CRLCrashStackGuard.h */,
+				1A437CF22044F247008256FC /* CRLCrashStackGuard.m */,
+				1A437CF32044F247008256FC /* CRLCrashTrap.h */,
+				1A437CF42044F247008256FC /* CRLCrashTrap.m */,
+				1A437CF52044F247008256FC /* CRLCrashUndefInst.h */,
+				1A437CF62044F247008256FC /* CRLCrashUndefInst.m */,
+			);
+			path = CrashProbe;
+			sourceTree = "<group>";
+		};
+		1A437D172044FC8C008256FC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		1A973CD31FDA99560056AD9E /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				1A973CD41FDA99660056AD9E /* TACSoicalDemoViewController.h */,
+				1A973CD51FDA99660056AD9E /* TACSoicalDemoViewController.m */,
+				1A973CD61FDA99660056AD9E /* TACSoicalDemoViewController.xib */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		1AB143E31E601E0500830F93 = {
+			isa = PBXGroup;
+			children = (
+				1AB143EE1E601E0500830F93 /* TACSamples */,
+				1AB144081E601E0500830F93 /* TACSamplesTests */,
+				1AB144131E601E0500830F93 /* TACSamplesUITests */,
+				1AB143ED1E601E0500830F93 /* Products */,
+				1A437D172044FC8C008256FC /* Recovered References */,
+				23CA99263C4EF653397D7425 /* Pods */,
+				0397D0F510EFF7A4F524E449 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1AB143ED1E601E0500830F93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AB143EC1E601E0500830F93 /* TACSamples.app */,
+				1AB144051E601E0500830F93 /* TACSamplesTests.xctest */,
+				1AB144101E601E0500830F93 /* TACSamplesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AB143EE1E601E0500830F93 /* TACSamples */ = {
+			isa = PBXGroup;
+			children = (
+				A89881EF2079FBA0009E540C /* Resource */,
+				1A0FDF601FD640500002DD62 /* Services */,
+				1A25DF641FBEBC78009B6BEE /* TACSamples.entitlements */,
+				1AB143F21E601E0500830F93 /* AppDelegate.h */,
+				1AB143F31E601E0500830F93 /* AppDelegate.m */,
+				1AB143F61E601E0500830F93 /* ViewController.m */,
+				1AB143F51E601E0500830F93 /* ViewController.h */,
+				1AB143F81E601E0500830F93 /* Main.storyboard */,
+				1AB143FB1E601E0500830F93 /* Assets.xcassets */,
+				1AB143FD1E601E0500830F93 /* LaunchScreen.storyboard */,
+				1AB144001E601E0500830F93 /* Info.plist */,
+				1AB143EF1E601E0500830F93 /* Supporting Files */,
+				1A894DFB1FD63A53007069E9 /* TACServicesTableViewController.h */,
+				1A894DFC1FD63A53007069E9 /* TACServicesTableViewController.m */,
+			);
+			path = TACSamples;
+			sourceTree = "<group>";
+		};
+		1AB143EF1E601E0500830F93 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A887895420450F1000511D03 /* tac_services_configurations.plist */,
+				1A0BB76C1FEBA978002F18D4 /* tac_services_configurations_qq.plist */,
+				1A0BB76B1FEBA977002F18D4 /* tac_services_configurations_wechat.plist */,
+				1AB143F01E601E0500830F93 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AB144081E601E0500830F93 /* TACSamplesTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4182A204441E400EA5E0F /* TACAnalyticsTests.m */,
+				1AB144091E601E0500830F93 /* TACSamplesTests.m */,
+				1AB1440B1E601E0500830F93 /* Info.plist */,
+				1AEA914E1FB9947900038FB5 /* TACStoragePathTest.m */,
+				1A16AE891FCC06C700685E77 /* TACUploadObjectTests.m */,
+			);
+			path = TACSamplesTests;
+			sourceTree = "<group>";
+		};
+		1AB144131E601E0500830F93 /* TACSamplesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1AB144141E601E0500830F93 /* TACSamplesUITests.m */,
+				1AB144161E601E0500830F93 /* Info.plist */,
+			);
+			path = TACSamplesUITests;
+			sourceTree = "<group>";
+		};
+		23CA99263C4EF653397D7425 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24857FC07CBCD7F9AEA765D1 /* Pods-TACSamples.debug.xcconfig */,
+				0ACF749837AF9CC2F85D9ABB /* Pods-TACSamples.release.xcconfig */,
+				A18E59466975E15C5318D105 /* Pods-TACSamplesTests.debug.xcconfig */,
+				8D8FC13CC9EA1DF1486AF52D /* Pods-TACSamplesTests.release.xcconfig */,
+				3BDD17E5286E3A74FBB78A20 /* Pods-TACSamplesUITests.debug.xcconfig */,
+				3FC041451C423AF0B7A014E8 /* Pods-TACSamplesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7FE97921207C981900296F26 /* Adtracker */ = {
+			isa = PBXGroup;
+			children = (
+				7FE97922207C983C00296F26 /* TACAdTrackerViewController.h */,
+				7FE97923207C983C00296F26 /* TACAdTrackerViewController.m */,
+			);
+			path = Adtracker;
+			sourceTree = "<group>";
+		};
+		7FE97925207CBAB400296F26 /* hybrid */ = {
+			isa = PBXGroup;
+			children = (
+				7FE97926207CBAD900296F26 /* TACHybrideDemoViewController.h */,
+				7FE97927207CBAD900296F26 /* TACHybrideDemoViewController.m */,
+				7FE97928207CBAD900296F26 /* TACHybrideDemoViewController.xib */,
+				7FE9792E207CBE9000296F26 /* TACWebViewController.h */,
+				7FE9792F207CBE9000296F26 /* TACWebViewController.m */,
+				7FE97933207CBEA600296F26 /* TACWKWebViewController.h */,
+				7FE97934207CBEA600296F26 /* TACWKWebViewController.m */,
+			);
+			path = hybrid;
+			sourceTree = "<group>";
+		};
+		A87452E8207B257300101228 /* SocialShare */ = {
+			isa = PBXGroup;
+			children = (
+				A87452E9207B257300101228 /* TACSocialShareDemoViewController.h */,
+				A87452EA207B257300101228 /* TACSocialShareDemoViewController.m */,
+				A87452EB207B257300101228 /* TACSocialShareDemoViewController.xib */,
+			);
+			path = SocialShare;
+			sourceTree = "<group>";
+		};
+		A89881EF2079FBA0009E540C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7FE9793C207CE0BB00296F26 /* app_link_h5_page1.html */,
+				7FE9793B207CE0BA00296F26 /* app_link_h5_stats.js */,
+				7FE9793D207CE0BB00296F26 /* app_link_h5.html */,
+				A89881E92074F650009E540C /* test.png */,
+				A89881ED2079F2B6009E540C /* TestThumb.png */,
+				A839DBD3207A509E009F399B /* testVideo.mp4 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AB143EB1E601E0500830F93 /* TACSamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AB144191E601E0500830F93 /* Build configuration list for PBXNativeTarget "TACSamples" */;
+			buildPhases = (
+				7F023DCE2B78745B3854A604 /* [CP] Check Pods Manifest.lock */,
+				1A38B0701FDAB4BB0054E40B /* [TAC]Run Script Before */,
+				1AB143E81E601E0500830F93 /* Sources */,
+				1AB143E91E601E0500830F93 /* Frameworks */,
+				1AB143EA1E601E0500830F93 /* Resources */,
+				1AE799541FD8E40700EA0FA5 /* [TAC]Run Scripts After */,
+				8B95BBD51A70F3900A418E45 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TACSamples;
+			productName = TACSamples;
+			productReference = 1AB143EC1E601E0500830F93 /* TACSamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AB144041E601E0500830F93 /* TACSamplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AB1441C1E601E0500830F93 /* Build configuration list for PBXNativeTarget "TACSamplesTests" */;
+			buildPhases = (
+				FEA16E20BBC5AD9734230209 /* [CP] Check Pods Manifest.lock */,
+				1AB144011E601E0500830F93 /* Sources */,
+				1AB144021E601E0500830F93 /* Frameworks */,
+				1AB144031E601E0500830F93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AB144071E601E0500830F93 /* PBXTargetDependency */,
+			);
+			name = TACSamplesTests;
+			productName = TACSamplesTests;
+			productReference = 1AB144051E601E0500830F93 /* TACSamplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1AB1440F1E601E0500830F93 /* TACSamplesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AB1441F1E601E0500830F93 /* Build configuration list for PBXNativeTarget "TACSamplesUITests" */;
+			buildPhases = (
+				C2C6205F2CF2FA682086EF86 /* [CP] Check Pods Manifest.lock */,
+				1AB1440C1E601E0500830F93 /* Sources */,
+				1AB1440D1E601E0500830F93 /* Frameworks */,
+				1AB1440E1E601E0500830F93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AB144121E601E0500830F93 /* PBXTargetDependency */,
+			);
+			name = TACSamplesUITests;
+			productName = TACSamplesUITests;
+			productReference = 1AB144101E601E0500830F93 /* TACSamplesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AB143E41E601E0500830F93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Tencent;
+				TargetAttributes = {
+					1AB143EB1E601E0500830F93 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R4S4R7Q4ZH;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					1AB144041E601E0500830F93 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R4S4R7Q4ZH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1AB143EB1E601E0500830F93;
+					};
+					1AB1440F1E601E0500830F93 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R4S4R7Q4ZH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1AB143EB1E601E0500830F93;
+					};
+				};
+			};
+			buildConfigurationList = 1AB143E71E601E0500830F93 /* Build configuration list for PBXProject "TACSamples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AB143E31E601E0500830F93;
+			productRefGroup = 1AB143ED1E601E0500830F93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AB143EB1E601E0500830F93 /* TACSamples */,
+				1AB144041E601E0500830F93 /* TACSamplesTests */,
+				1AB1440F1E601E0500830F93 /* TACSamplesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AB143EA1E601E0500830F93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89881EA2074F650009E540C /* test.png in Resources */,
+				1AB143FF1E601E0500830F93 /* LaunchScreen.storyboard in Resources */,
+				1A437D112044F2DA008256FC /* TACCrashMockListTableViewController.xib in Resources */,
+				1A0BB76E1FEBA978002F18D4 /* tac_services_configurations_qq.plist in Resources */,
+				7FE9792A207CBAD900296F26 /* TACHybrideDemoViewController.xib in Resources */,
+				1A0FDF691FD6407D0002DD62 /* TACAnalyticsDemoViewController.xib in Resources */,
+				1A437D162044F4C3008256FC /* TACCrashDetailViewController.xib in Resources */,
+				1A0FDF731FD640BA0002DD62 /* TACMessagingDemoViewController.xib in Resources */,
+				1A1BDDA6207DB77000EE5B40 /* TACSocialShareDemoViewController.xib in Resources */,
+				1A0FDF781FD640D00002DD62 /* TACStorageDemoViewController.xib in Resources */,
+				1A0BB76D1FEBA978002F18D4 /* tac_services_configurations_wechat.plist in Resources */,
+				A887895620450F1000511D03 /* tac_services_configurations.plist in Resources */,
+				1A973CD81FDA99660056AD9E /* TACSoicalDemoViewController.xib in Resources */,
+				A89881EE2079F2B7009E540C /* TestThumb.png in Resources */,
+				A87452E1207B176100101228 /* testVideo.mp4 in Resources */,
+				1AB143FC1E601E0500830F93 /* Assets.xcassets in Resources */,
+				7FE9793F207CE0BB00296F26 /* app_link_h5_page1.html in Resources */,
+				7FE97940207CE0BB00296F26 /* app_link_h5.html in Resources */,
+				7FE9793E207CE0BB00296F26 /* app_link_h5_stats.js in Resources */,
+				1AB143FA1E601E0500830F93 /* Main.storyboard in Resources */,
+				1A40B7F8200C84FF003893FF /* TACPaymentDemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AB144031E601E0500830F93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AB1440E1E601E0500830F93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A38B0701FDAB4BB0054E40B /* [TAC]Run Script Before */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[TAC]Run Script Before";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export TAC_SCRIPTS_BASE_PATH=${SRCROOT}/../../BisnessComponents\necho ${TAC_SCRIPTS_BASE_PATH}\nbash \"${SRCROOT}/../../BisnessComponents/ApplicationCloud/TACCore/Scripts/tac.run.all.before.sh\"\n";
+		};
+		1AE799541FD8E40700EA0FA5 /* [TAC]Run Scripts After */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[TAC]Run Scripts After";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export TAC_SCRIPTS_BASE_PATH=${SRCROOT}/../../BisnessComponents\n\necho ${TAC_SCRIPTS_BASE_PATH}\n\nbash \"${SRCROOT}/../../BisnessComponents/ApplicationCloud/TACCore/Scripts/tac.run.all.after.sh\"\n";
+		};
+		7F023DCE2B78745B3854A604 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TACSamples-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B95BBD51A70F3900A418E45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TACSamples/Pods-TACSamples-resources.sh",
+				"${PODS_ROOT}/../../../BisnessComponents/ApplicationCloud/TACPayment/Pod/Frameworks/OpenMidas.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OpenMidas.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TACSamples/Pods-TACSamples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C6205F2CF2FA682086EF86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TACSamplesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEA16E20BBC5AD9734230209 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TACSamplesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AB143E81E601E0500830F93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A437D102044F2DA008256FC /* TACCrashMockListTableViewController.m in Sources */,
+				1A973CD71FDA99660056AD9E /* TACSoicalDemoViewController.m in Sources */,
+				1A437D082044F247008256FC /* CRLCrashSmashStackBottom.m in Sources */,
+				1A437CF92044F247008256FC /* CRLCrashAsyncSafeThread.m in Sources */,
+				1A437D072044F247008256FC /* CRLCrashROPage.m in Sources */,
+				1A437D012044F247008256FC /* CRLCrashNXPage.m in Sources */,
+				1A894DFD1FD63A53007069E9 /* TACServicesTableViewController.m in Sources */,
+				1AB143F71E601E0500830F93 /* ViewController.m in Sources */,
+				1A437CFF2044F247008256FC /* CRLCrashNSLog.m in Sources */,
+				1A0FDF771FD640D00002DD62 /* TACStorageDemoViewController.m in Sources */,
+				7FE97931207CBE9000296F26 /* TACWebViewController.m in Sources */,
+				1A437D0A2044F247008256FC /* CRLCrashStackGuard.m in Sources */,
+				1A40B805200C9B5E003893FF /* MBProgressHUD.m in Sources */,
+				1A437D0C2044F247008256FC /* CRLCrashUndefInst.m in Sources */,
+				1A437D002044F247008256FC /* CRLCrashNULL.m in Sources */,
+				1A437CFD2044F247008256FC /* CRLCrashGarbage.m in Sources */,
+				1A437CF72044F247008256FC /* CRLCrash.m in Sources */,
+				1A437D152044F4C3008256FC /* TACCrashDetailViewController.m in Sources */,
+				7FE97929207CBAD900296F26 /* TACHybrideDemoViewController.m in Sources */,
+				7FE97924207C983C00296F26 /* TACAdTrackerViewController.m in Sources */,
+				1A437CF82044F247008256FC /* CRLCrashAbort.m in Sources */,
+				1A437D042044F247008256FC /* CRLCrashOverwriteLinkRegister.m in Sources */,
+				1A40B7F7200C84FF003893FF /* TACPaymentDemoViewController.m in Sources */,
+				1A437D0B2044F247008256FC /* CRLCrashTrap.m in Sources */,
+				1A437CFB2044F247008256FC /* CRLCrashCorruptObjC.m in Sources */,
+				1A0FDF681FD6407D0002DD62 /* TACAnalyticsDemoViewController.m in Sources */,
+				1A1BDDA5207DB77000EE5B40 /* TACSocialShareDemoViewController.m in Sources */,
+				1A437D022044F247008256FC /* CRLCrashObjCException.m in Sources */,
+				1A437CFA2044F247008256FC /* CRLCrashCorruptMalloc.m in Sources */,
+				1A40B806200C9B5E003893FF /* OpenMidasTool.m in Sources */,
+				1A437D062044F247008256FC /* CRLCrashReleasedObject.m in Sources */,
+				7FE97936207CBEA600296F26 /* TACWKWebViewController.m in Sources */,
+				1A0FDF721FD640BA0002DD62 /* TACMessagingDemoViewController.m in Sources */,
+				1A437D032044F247008256FC /* CRLCrashObjCMsgSend.m in Sources */,
+				1A437D052044F247008256FC /* CRLCrashPrivInst.m in Sources */,
+				1A437D092044F247008256FC /* CRLCrashSmashStackTop.m in Sources */,
+				1A437CFC2044F247008256FC /* CRLCrashCXXException.mm in Sources */,
+				1AB143F41E601E0500830F93 /* AppDelegate.m in Sources */,
+				1AB143F11E601E0500830F93 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AB144011E601E0500830F93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AB1440A1E601E0500830F93 /* TACSamplesTests.m in Sources */,
+				A8A4182B204441E400EA5E0F /* TACAnalyticsTests.m in Sources */,
+				1AEA914F1FB9947900038FB5 /* TACStoragePathTest.m in Sources */,
+				1A16AE8A1FCC06C700685E77 /* TACUploadObjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AB1440C1E601E0500830F93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AB144151E601E0500830F93 /* TACSamplesUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AB144071E601E0500830F93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AB143EB1E601E0500830F93 /* TACSamples */;
+			targetProxy = 1AB144061E601E0500830F93 /* PBXContainerItemProxy */;
+		};
+		1AB144121E601E0500830F93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AB143EB1E601E0500830F93 /* TACSamples */;
+			targetProxy = 1AB144111E601E0500830F93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1AB143F81E601E0500830F93 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AB143F91E601E0500830F93 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1AB143FD1E601E0500830F93 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AB143FE1E601E0500830F93 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AB144171E601E0500830F93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AB144181E601E0500830F93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AB1441A1E601E0500830F93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24857FC07CBCD7F9AEA765D1 /* Pods-TACSamples.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TACSamples/TACSamples.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 终端 云 (LF68D2P5RL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = R4S4R7Q4ZH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AOPKit\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/QCloudCOSXML\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/QCloudCore\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACAuthorization\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACAuthorizationQQ\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACAuthorizationWechat\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACCore\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACCrash\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACLocation\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACMessaging\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACPayment\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACPaymentPluginQQ\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACPaymentPluginWechat\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialQQ\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialShare\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialWechat\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACStorage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialQQ/Pod/Frameworks\"/**",
+				);
+				INFOPLIST_FILE = TACSamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.qcloud.tac.test1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		1AB1441B1E601E0500830F93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACF749837AF9CC2F85D9ABB /* Pods-TACSamples.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TACSamples/TACSamples.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 终端 云 (LF68D2P5RL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4S4R7Q4ZH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AOPKit\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/QCloudCOSXML\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/QCloudCore\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACAuthorization\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACAuthorizationQQ\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACAuthorizationWechat\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACCore\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACCrash\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACLocation\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACMessaging\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACPayment\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACPaymentPluginQQ\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACPaymentPluginWechat\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialQQ\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialShare\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialWechat\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACStorage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TACSocialQQ/Pod/Frameworks\"",
+				);
+				INFOPLIST_FILE = TACSamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.qcloud.tac.test1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		1AB1441D1E601E0500830F93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A18E59466975E15C5318D105 /* Pods-TACSamplesTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R4S4R7Q4ZH;
+				INFOPLIST_FILE = TACSamplesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.qcloud.TACSamplesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TACSamples.app/TACSamples";
+			};
+			name = Debug;
+		};
+		1AB1441E1E601E0500830F93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8FC13CC9EA1DF1486AF52D /* Pods-TACSamplesTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R4S4R7Q4ZH;
+				INFOPLIST_FILE = TACSamplesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.qcloud.TACSamplesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TACSamples.app/TACSamples";
+			};
+			name = Release;
+		};
+		1AB144201E601E0500830F93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BDD17E5286E3A74FBB78A20 /* Pods-TACSamplesUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = R4S4R7Q4ZH;
+				INFOPLIST_FILE = TACSamplesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.qcloud.TACSamplesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TACSamples;
+			};
+			name = Debug;
+		};
+		1AB144211E601E0500830F93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FC041451C423AF0B7A014E8 /* Pods-TACSamplesUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = R4S4R7Q4ZH;
+				INFOPLIST_FILE = TACSamplesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.qcloud.TACSamplesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TACSamples;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AB143E71E601E0500830F93 /* Build configuration list for PBXProject "TACSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AB144171E601E0500830F93 /* Debug */,
+				1AB144181E601E0500830F93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AB144191E601E0500830F93 /* Build configuration list for PBXNativeTarget "TACSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AB1441A1E601E0500830F93 /* Debug */,
+				1AB1441B1E601E0500830F93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AB1441C1E601E0500830F93 /* Build configuration list for PBXNativeTarget "TACSamplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AB1441D1E601E0500830F93 /* Debug */,
+				1AB1441E1E601E0500830F93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AB1441F1E601E0500830F93 /* Build configuration list for PBXNativeTarget "TACSamplesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AB144201E601E0500830F93 /* Debug */,
+				1AB144211E601E0500830F93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AB143E41E601E0500830F93 /* Project object */;
+}
