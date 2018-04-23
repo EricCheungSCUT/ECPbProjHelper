@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456B82FD208AE8FC001A3F69 /* FileUtilies.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B82FC208AE8FC001A3F69 /* FileUtilies.m */; };
 		A83463252080D506002E4A26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83463242080D506002E4A26 /* AppDelegate.m */; };
 		A83463282080D506002E4A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83463272080D506002E4A26 /* ViewController.m */; };
 		A834632A2080D506002E4A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83463292080D506002E4A26 /* Assets.xcassets */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		456B82FB208AE8FC001A3F69 /* FileUtilies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtilies.h; sourceTree = "<group>"; };
+		456B82FC208AE8FC001A3F69 /* FileUtilies.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtilies.m; sourceTree = "<group>"; };
 		A83463202080D506002E4A26 /* TACIntergrationTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TACIntergrationTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83463232080D506002E4A26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A83463242080D506002E4A26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				A8481739208A1E900039AA5B /* ECPbProjHelper.m */,
 				A848173B208A1EA20039AA5B /* ECBuildPhases.h */,
 				A848173C208A1EA20039AA5B /* ECBuildPhases.m */,
+				456B82FB208AE8FC001A3F69 /* FileUtilies.h */,
+				456B82FC208AE8FC001A3F69 /* FileUtilies.m */,
 			);
 			path = ECPbxprojHelper;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456B82FD208AE8FC001A3F69 /* FileUtilies.m in Sources */,
 				A848173D208A1EA20039AA5B /* ECBuildPhases.m in Sources */,
 				A848173A208A1E900039AA5B /* ECPbProjHelper.m in Sources */,
 				A83463282080D506002E4A26 /* ViewController.m in Sources */,
@@ -454,6 +460,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TACIntergrationTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = ericcheung.TACIntergrationTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -468,6 +475,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TACIntergrationTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = ericcheung.TACIntergrationTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
