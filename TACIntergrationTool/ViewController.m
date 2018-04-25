@@ -88,6 +88,9 @@
         return NO;
     }
     NSArray* fileList = [CocoaUtil findFilesWithExtension:@"plist" inFolder:workspcaePath];//[[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
+    
+    NSArray* test = [CocoaUtil findFilesWithFileName:@"AppDelegate.h" inDirectory:workspcaePath];
+    NSArray* directoryTest = [CocoaUtil findDirectoryWithName:@"TACCrash.framework" inDirectory:workspcaePath];
     if (nil != error) {
         return  NO;
     }
@@ -95,7 +98,6 @@
     NSDictionary* infoPlist;
     NSDictionary* qqPlist;
     NSDictionary* wechatPlist;
-    
     
     NSArray * contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:currentPath error:nil];
     NSArray* plistFiles = [[FileUtils sharedInstance] findPlistFile:contents];
@@ -107,8 +109,9 @@
     }
     
     currentPath = [currentPath stringByAppendingString:@"/"];
+    
+
     for (NSString* fileName in plistFiles) {
-        
         NSString* filePath = [currentPath stringByAppendingString:fileName];
         NSDictionary* dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
         NSLog(@"file path is %@",filePath);
@@ -144,7 +147,6 @@
     }
     
     NSDictionary* resultInfoPlist = [[FileUtils sharedInstance] insertQQSchemeIntoPlist:infoPlist :qqPlist];
-    
     NSString* destPath = [NSString stringWithFormat:@"%@Info.plist",currentPath];
     [[FileUtils sharedInstance] writePlist:resultInfoPlist intoPath:destPath];
     
@@ -169,10 +171,20 @@
     [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxcprojPath];
 
     
+    NSString* buildAfterShell;
+    if (directoryTest.count == 0) {
+        //means intergrate via cocoapods
+        buildAfterShell=@"${PODS_ROOT}/TACCore/Scripts/tac.run.all.after.sh";
+    } else {
+        NSString* crashFrameworkPath = [[directoryTest firstObject] stringByAppendingString:@"/Scripts/run"];
+        NSInteger SRCRootLength = workspcaePath.length;
+        NSString* directoryUnderSRCROOT = [crashFrameworkPath substringFromIndex:SRCRootLength];
+        buildAfterShell = [NSString stringWithFormat:@"bash \"${SRCROOT}%@\"",directoryUnderSRCROOT];
+    }
     
     ECBuildPhases* buildPhasesAfter = [[ECBuildPhases alloc] init];
-    buildPhasesAfter.name = @"[Test] first shell script phases";
-    buildPhasesAfter.shellScript = @"pwd";
+    buildPhasesAfter.name = @"[Test] run after build shell script phases";
+    buildPhasesAfter.shellScript = buildAfterShell;
     buildPhasesAfter.shellPath = @"/bin/sh";
     buildPhasesAfter.isa = @"PBXShellScriptBuildPhase";
     buildPhasesAfter.runOnlyForDeploymentPostprocessing = @"0";

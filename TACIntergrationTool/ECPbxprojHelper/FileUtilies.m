@@ -21,11 +21,9 @@
 + (BOOL) writePlistDataToPath:(NSString*)path withDictionary:(NSDictionary*) dictionary {
     
     NSData* plistData = [NSPropertyListSerialization dataWithPropertyList:dictionary format:NSPropertyListXMLFormat_v1_0 options:0 error:nil];
-    
     if (nil == plistData) {
         return  NO;
     }
-    
     return [plistData writeToFile:path atomically:YES];
 }
 @end

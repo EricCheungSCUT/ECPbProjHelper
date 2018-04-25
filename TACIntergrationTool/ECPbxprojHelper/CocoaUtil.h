@@ -14,4 +14,11 @@
 + (NSArray *)findFilesWithExtension:(NSString *)extension
                            inFolder:(NSString *)folder;
 
+
++ (NSArray*) findFilesWithFileName:(NSString*)fileName
+                       inDirectory:(NSString*)directory;
+
+
++ (NSArray*) findDirectoryWithName:(NSString*)directoryName
+                       inDirectory:(NSString*)directory;
 @end
