@@ -26,6 +26,7 @@
     
 }
 
+
 - (NSArray<NSString*>*) findPlistFile:(NSArray*)files {
     NSMutableArray* result = [NSMutableArray array];
     for (NSString* file in files) {
@@ -76,13 +77,32 @@
 - (BOOL) writePlist:(NSDictionary*)plistDict intoPath:(NSString*)path {
     NSError* error;
     NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
-                         
                                                                    format:NSPropertyListXMLFormat_v1_0
                          
                                                          errorDescription:&error];
     BOOL canWrite = [[NSFileManager defaultManager] isWritableFileAtPath:path];
-    
+    if (!canWrite) {
+        NSLog(@"Cannot write to path%@",path);
+    }
     [plistData writeToFile:path atomically:YES];
     return YES;
+}
+
+- (NSString*) projectNameFromPath:(NSString*)path {
+    NSError* error;
+    NSArray* filesInPath = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
+    if (error) {
+        NSLog([error description]);
+    }
+    BOOL didFound = NO;
+    NSString* projectName = nil;
+    for (NSString* string in filesInPath) {
+        if ([string hasSuffix:@".xcodeproj"]) {
+            didFound = YES;
+            projectName = [[string componentsSeparatedByString:@"."] firstObject];
+            break;
+        }
+    }
+    return projectName;
 }
 @end

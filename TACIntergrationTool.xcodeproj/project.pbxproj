@@ -19,6 +19,10 @@
 		A8481736208A14890039AA5B /* project.pbxproj in Resources */ = {isa = PBXBuildFile; fileRef = A8481735208A14890039AA5B /* project.pbxproj */; };
 		A848173A208A1E900039AA5B /* ECPbProjHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8481739208A1E900039AA5B /* ECPbProjHelper.m */; };
 		A848173D208A1EA20039AA5B /* ECBuildPhases.m in Sources */ = {isa = PBXBuildFile; fileRef = A848173C208A1EA20039AA5B /* ECBuildPhases.m */; };
+		A89FF40F208F206200CDF17E /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89FF40E208F206200CDF17E /* YYModel.framework */; };
+		A89FF413208F209200CDF17E /* ECProjectBuildConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FF412208F209200CDF17E /* ECProjectBuildConfiguration.m */; };
+		A89FF416208F5DB300CDF17E /* CocoaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FF415208F5DB300CDF17E /* CocoaUtil.m */; };
+		A89FF419208F5F5400CDF17E /* NSArray+Pbxproj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FF418208F5F5400CDF17E /* NSArray+Pbxproj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,14 @@
 		A8481739208A1E900039AA5B /* ECPbProjHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPbProjHelper.m; sourceTree = "<group>"; };
 		A848173B208A1EA20039AA5B /* ECBuildPhases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECBuildPhases.h; sourceTree = "<group>"; };
 		A848173C208A1EA20039AA5B /* ECBuildPhases.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECBuildPhases.m; sourceTree = "<group>"; };
+		A89FF40D208F1CB100CDF17E /* ECProjectHelperConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECProjectHelperConstants.h; sourceTree = "<group>"; };
+		A89FF40E208F206200CDF17E /* YYModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YYModel.framework; sourceTree = "<group>"; };
+		A89FF411208F209200CDF17E /* ECProjectBuildConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECProjectBuildConfiguration.h; sourceTree = "<group>"; };
+		A89FF412208F209200CDF17E /* ECProjectBuildConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECProjectBuildConfiguration.m; sourceTree = "<group>"; };
+		A89FF414208F5DB300CDF17E /* CocoaUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaUtil.h; sourceTree = "<group>"; };
+		A89FF415208F5DB300CDF17E /* CocoaUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaUtil.m; sourceTree = "<group>"; };
+		A89FF417208F5F5400CDF17E /* NSArray+Pbxproj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Pbxproj.h"; sourceTree = "<group>"; };
+		A89FF418208F5F5400CDF17E /* NSArray+Pbxproj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Pbxproj.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89FF40F208F206200CDF17E /* YYModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +127,7 @@
 		A83463222080D506002E4A26 /* TACIntergrationTool */ = {
 			isa = PBXGroup;
 			children = (
+				A89FF40E208F206200CDF17E /* YYModel.framework */,
 				A8481737208A1E690039AA5B /* ECPbxprojHelper */,
 				A8481735208A14890039AA5B /* project.pbxproj */,
 				A83463232080D506002E4A26 /* AppDelegate.h */,
@@ -152,14 +166,29 @@
 		A8481737208A1E690039AA5B /* ECPbxprojHelper */ = {
 			isa = PBXGroup;
 			children = (
+				A89FF410208F207300CDF17E /* Models */,
 				A8481738208A1E900039AA5B /* ECPbProjHelper.h */,
 				A8481739208A1E900039AA5B /* ECPbProjHelper.m */,
 				A848173B208A1EA20039AA5B /* ECBuildPhases.h */,
 				A848173C208A1EA20039AA5B /* ECBuildPhases.m */,
 				456B82FB208AE8FC001A3F69 /* FileUtilies.h */,
 				456B82FC208AE8FC001A3F69 /* FileUtilies.m */,
+				A89FF40D208F1CB100CDF17E /* ECProjectHelperConstants.h */,
+				A89FF414208F5DB300CDF17E /* CocoaUtil.h */,
+				A89FF415208F5DB300CDF17E /* CocoaUtil.m */,
+				A89FF417208F5F5400CDF17E /* NSArray+Pbxproj.h */,
+				A89FF418208F5F5400CDF17E /* NSArray+Pbxproj.m */,
 			);
 			path = ECPbxprojHelper;
+			sourceTree = "<group>";
+		};
+		A89FF410208F207300CDF17E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A89FF411208F209200CDF17E /* ECProjectBuildConfiguration.h */,
+				A89FF412208F209200CDF17E /* ECProjectBuildConfiguration.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +330,10 @@
 				A83463282080D506002E4A26 /* ViewController.m in Sources */,
 				A83463302080D506002E4A26 /* main.m in Sources */,
 				A83463252080D506002E4A26 /* AppDelegate.m in Sources */,
+				A89FF419208F5F5400CDF17E /* NSArray+Pbxproj.m in Sources */,
+				A89FF416208F5DB300CDF17E /* CocoaUtil.m in Sources */,
 				A83463552080D9DF002E4A26 /* FileUtils.m in Sources */,
+				A89FF413208F209200CDF17E /* ECProjectBuildConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,9 +490,17 @@
 				CODE_SIGN_ENTITLEMENTS = TACIntergrationTool/TACIntergrationTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TACIntergrationTool",
+				);
 				INFOPLIST_FILE = TACIntergrationTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ericcheung.TACIntergrationTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -473,9 +513,17 @@
 				CODE_SIGN_ENTITLEMENTS = TACIntergrationTool/TACIntergrationTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TACIntergrationTool",
+				);
 				INFOPLIST_FILE = TACIntergrationTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ericcheung.TACIntergrationTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

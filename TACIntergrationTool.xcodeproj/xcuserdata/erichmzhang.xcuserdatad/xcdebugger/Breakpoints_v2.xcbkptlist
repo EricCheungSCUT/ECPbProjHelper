@@ -10,43 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TACIntergrationTool/FileUtils.m"
-            timestampString = "545922556.4753881"
+            timestampString = "546318975.468708"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-findPlistFile:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/FileUtils.m"
-            timestampString = "545922556.47551"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-insertQQSchemeIntoPlist::"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/FileUtils.m"
-            timestampString = "545922556.475583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-writePlist:intoPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/FileUtils.m"
-            timestampString = "545922556.475644"
+            filePath = "TACIntergrationTool/ECPbxprojHelper/ECPbProjHelper.m"
+            timestampString = "546318975.46912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-insertQQSchemeIntoPlist::"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-insertBuildPhase:inDictionary:withIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TACIntergrationTool/ECPbxprojHelper/ECPbProjHelper.m"
+            timestampString = "546318975.469708"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-checkWhetherUUIDExisted:inPlistDictionary:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TACIntergrationTool/ViewController.m"
-            timestampString = "545922735.984364"
+            timestampString = "546318975.470064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-insertPlistFileInPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +74,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TACIntergrationTool/ViewController.m"
-            timestampString = "545922735.984458"
+            timestampString = "546318975.470713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-insertPlistFileInPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TACIntergrationTool/ViewController.m"
+            timestampString = "546318975.471224"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-insertPlistFileInPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TACIntergrationTool/ViewController.m"
+            timestampString = "546318975.471718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-insertPlistFileInPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TACIntergrationTool/ECPbxprojHelper/ECPbProjHelper.m"
+            timestampString = "546318975.472137"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-insertBuildPhase:inDictionary:withIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TACIntergrationTool/ViewController.m"
+            timestampString = "546318975.473502"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-insertPlistFileInPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TACIntergrationTool/ECPbxprojHelper/ECPbProjHelper.m"
+            timestampString = "546318975.474158"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-insertBuildPhase:inDictionary:withIndex:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

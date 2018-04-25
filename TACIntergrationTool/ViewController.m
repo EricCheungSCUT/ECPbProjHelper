@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.m
 //  TACIntergrationTool
 //
@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "FileUtils.h"
+#import "ECPbProjHelper.h"
+#import "CocoaUtil.h"
 @interface ViewController()<NSPathControlDelegate>
 @property (weak) IBOutlet NSPathControl *pathControl;
 @property (nonatomic,strong ) NSString* lastPathSelected;
@@ -19,28 +21,34 @@
     self.pathControl.delegate = self;
     
     
-    NSString* path = @"/Users/erichmzhang/Code/NewQCloudiOSCodes/QCloudiOSCodes/Products/TACSamples/TACSamples.xcodeproj/project.pbxproj";
-    path = [[NSBundle mainBundle] pathForResource:@"project.pbxproj" ofType:nil];
-    NSData* data = [[NSData alloc] initWithContentsOfFile:path];
-    NSMutableDictionary* dict = [[[NSMutableDictionary alloc] initWithContentsOfFile:path] mutableCopy];
-    
-    NSMutableDictionary* mutableDict = [NSMutableDictionary dictionaryWithDictionary:dict];
-    
-    NSDictionary* buildBefore =  dict[@"objects"][@"1A38B0701FDAB4BB0054E40B"];
-    NSMutableDictionary* newScriptPhase = [buildBefore mutableCopy];
-    newScriptPhase[@"name"] = @"new Test name";
-    newScriptPhase[@"shellScript"]=@"pwd";
-    [mutableDict[@"objects"] setValue:newScriptPhase forKey:@"1A38B0723FDA23BB0054390B"];
-    
-    NSString* outputPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"project.pbxproj"];
-    
-    //add declaration
-    NSMutableArray* mutableArray = [NSMutableArray arrayWithArray:dict[@"objects"][@"1AB143EB1E601E0500830F93"][@"buildPhases"]];
-    [mutableArray  addObject:@"1A38B0723FDA23BB0054390B"];
-    [mutableDict[@"objects"][@"1AB143EB1E601E0500830F93"] setValue:mutableArray forKey:@"buildPhases"];
-    NSData* outputData = [NSPropertyListSerialization dataWithPropertyList:mutableDict format:NSPropertyListXMLFormat_v1_0 options:0 error:nil];
-    [outputData writeToFile:outputPath atomically:YES];
-    NSLog(@"what ever");
+//    NSString* path = @"/Users/erichmzhang/Code/NewQCloudiOSCodes/QCloudiOSCodes/Products/TACSamples/TACSamples.xcodeproj/project.pbxproj";
+//    path = [[NSBundle mainBundle] pathForResource:@"project.pbxproj" ofType:nil];
+//    NSData* data = [[NSData alloc] initWithContentsOfFile:path];
+//    NSMutableDictionary* dict = [[[NSMutableDictionary alloc] initWithContentsOfFile:path] mutableCopy];
+//
+//    NSMutableDictionary* mutableDict = [NSMutableDictionary dictionaryWithDictionary:dict];
+//
+//    NSDictionary* buildBefore =  dict[@"objects"][@"1A38B0701FDAB4BB0054E40B"];
+//    NSMutableDictionary* newScriptPhase = [buildBefore mutableCopy];
+//    newScriptPhase[@"name"] = @"new Test name";
+//    newScriptPhase[@"shellScript"]=@"pwd";
+//    [mutableDict[@"objects"] setValue:newScriptPhase forKey:@"1A38B0723FDA23BB0054390B"];
+//
+//    NSString* outputPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"project.pbxproj"];
+//
+//    //add declaration
+//    NSMutableArray* mutableArray = [NSMutableArray arrayWithArray:dict[@"objects"][@"1AB143EB1E601E0500830F93"][@"buildPhases"]];
+//    [mutableArray  addObject:@"1A38B0723FDA23BB0054390B"];
+//    [mutableDict[@"objects"][@"1AB143EB1E601E0500830F93"] setValue:mutableArray forKey:@"buildPhases"];
+//    NSData* outputData = [NSPropertyListSerialization dataWithPropertyList:mutableDict format:NSPropertyListXMLFormat_v1_0 options:0 error:nil];
+//    [outputData writeToFile:outputPath atomically:YES];
+//    NSLog(@"what ever");
+//
+//
+//    ECBuildPhases* buildPhases = [[ECBuildPhases alloc] init];
+//    buildPhases.shellScript = @"pwd";
+//    [[ECPbProjHelper sharedInstance] insertBuildPhase:buildPhases inDictionary:mutableDict withIndex:0];
+//
 }
 
 - (IBAction)onHandleFIlePathChange:(id)sender {
@@ -74,15 +82,30 @@
 
 - (BOOL)insertPlistFileInPath:(NSString*)workspcaePath {
     NSError* error;
-    NSArray* fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
+    NSString* projectName = [[FileUtils sharedInstance] projectNameFromPath:workspcaePath];
+    if (!projectName) {
+        NSLog(@"Cannot found project in path %@",workspcaePath);
+        return NO;
+    }
+    NSArray* fileList = [CocoaUtil findFilesWithExtension:@"plist" inFolder:workspcaePath];//[[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
     if (nil != error) {
         return  NO;
     }
-    NSArray* plistFiles = [[FileUtils sharedInstance] findPlistFile:fileList];
     NSString* currentPath = workspcaePath;
     NSDictionary* infoPlist;
     NSDictionary* qqPlist;
     NSDictionary* wechatPlist;
+    
+    
+    NSArray * contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:currentPath error:nil];
+    NSArray* plistFiles = [[FileUtils sharedInstance] findPlistFile:contents];
+//if cannot found the plist file,down deeper into project directory
+    if (plistFiles.count == 0) {
+        currentPath = [currentPath stringByAppendingPathComponent:projectName];
+        contents =  [[NSFileManager defaultManager] contentsOfDirectoryAtPath:currentPath error:nil];
+        plistFiles =[[FileUtils sharedInstance] findPlistFile:contents];
+    }
+    
     currentPath = [currentPath stringByAppendingString:@"/"];
     for (NSString* fileName in plistFiles) {
         
@@ -126,7 +149,52 @@
     [[FileUtils sharedInstance] writePlist:resultInfoPlist intoPath:destPath];
     
     NSLog(@"URL is %@",workspcaePath);
+
+    ECBuildPhases* buildPhases = [[ECBuildPhases alloc] init];
+    buildPhases.name = @"[Test] first shell script phases";
+    buildPhases.shellScript = @"pwd";
+    buildPhases.shellPath = @"/bin/sh";
+    buildPhases.isa = @"PBXShellScriptBuildPhase";
+    buildPhases.runOnlyForDeploymentPostprocessing = @"0";
+    buildPhases.outputPaths = [NSArray array];
+    buildPhases.files = [NSArray array];
+    buildPhases.inputPaths = [NSArray array];
+    NSMutableDictionary* mutableDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:[workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName]];
+    
+    [[ECPbProjHelper sharedInstance] insertBuildPhase:buildPhases inDictionary:mutableDictionary withIndex:0];
+    
+    
+    NSString* pbxcprojPath = [workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName];
+    
+    [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxcprojPath];
+
+    
+    
+    ECBuildPhases* buildPhasesAfter = [[ECBuildPhases alloc] init];
+    buildPhasesAfter.name = @"[Test] first shell script phases";
+    buildPhasesAfter.shellScript = @"pwd";
+    buildPhasesAfter.shellPath = @"/bin/sh";
+    buildPhasesAfter.isa = @"PBXShellScriptBuildPhase";
+    buildPhasesAfter.runOnlyForDeploymentPostprocessing = @"0";
+    buildPhasesAfter.outputPaths = [NSArray array];
+    buildPhasesAfter.files = [NSArray array];
+    buildPhasesAfter.inputPaths = [NSArray array];
+    [[ECPbProjHelper sharedInstance] insertBuildPhase:buildPhasesAfter inDictionary:mutableDictionary withIndex:-2];
+    [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxcprojPath];
+
+    [self showAlertWithTitle:@"配置成功" content:@"请打开项目查看 URL Scheme, 编译前后运行脚本"];
     return YES;
+}
+
+- (void)showAlertWithTitle:(NSString*)title content:(NSString*)content {
+    NSAlert* alert = [NSAlert new];
+    [alert setMessageText:title];
+    [alert setInformativeText:content];
+    [alert addButtonWithTitle:@"确定"];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert beginSheetModalForWindow:[self.view window] completionHandler:^(NSModalResponse returnCode) {
+        
+    }];
 }
 
 @end

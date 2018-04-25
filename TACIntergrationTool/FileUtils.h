@@ -11,6 +11,14 @@
 @interface FileUtils : NSObject
 + (instancetype)sharedInstance;
 
+/**
+ get project name from the path that contains *.pbxproj file
+
+ @param path path that contains the *.pbxproj file
+ @return peoject name, nil if cannot found *.pbxproj file
+ */
+- (NSString*) projectNameFromPath:(NSString*)path;
+
 - (NSArray<NSString*>*) filesInPath:(NSString*)path;
 
 - (NSArray<NSString*>*) findPlistFile:(NSArray*)files;
