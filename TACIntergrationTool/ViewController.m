@@ -10,62 +10,47 @@
 #import "FileUtils.h"
 #import "ECPbProjHelper.h"
 #import "CocoaUtil.h"
-@interface ViewController()<NSPathControlDelegate>
+#import "WebViewController.h"
+#import "ArchiveHelper.h"
+@import WebKit;
+
+@interface ViewController()<NSPathControlDelegate,NSViewControllerPresentationAnimator>
+@property (weak) IBOutlet NSPathControl *configurationFilePathControl;
 @property (weak) IBOutlet NSPathControl *pathControl;
 @property (nonatomic,strong ) NSString* lastPathSelected;
+@property (nonatomic,strong)  NSString* configurationPlistSelected;
 @end
 
 @implementation ViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pathControl.delegate = self;
-    
-    
-//    NSString* path = @"/Users/erichmzhang/Code/NewQCloudiOSCodes/QCloudiOSCodes/Products/TACSamples/TACSamples.xcodeproj/project.pbxproj";
-//    path = [[NSBundle mainBundle] pathForResource:@"project.pbxproj" ofType:nil];
-//    NSData* data = [[NSData alloc] initWithContentsOfFile:path];
-//    NSMutableDictionary* dict = [[[NSMutableDictionary alloc] initWithContentsOfFile:path] mutableCopy];
-//
-//    NSMutableDictionary* mutableDict = [NSMutableDictionary dictionaryWithDictionary:dict];
-//
-//    NSDictionary* buildBefore =  dict[@"objects"][@"1A38B0701FDAB4BB0054E40B"];
-//    NSMutableDictionary* newScriptPhase = [buildBefore mutableCopy];
-//    newScriptPhase[@"name"] = @"new Test name";
-//    newScriptPhase[@"shellScript"]=@"pwd";
-//    [mutableDict[@"objects"] setValue:newScriptPhase forKey:@"1A38B0723FDA23BB0054390B"];
-//
-//    NSString* outputPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"project.pbxproj"];
-//
-//    //add declaration
-//    NSMutableArray* mutableArray = [NSMutableArray arrayWithArray:dict[@"objects"][@"1AB143EB1E601E0500830F93"][@"buildPhases"]];
-//    [mutableArray  addObject:@"1A38B0723FDA23BB0054390B"];
-//    [mutableDict[@"objects"][@"1AB143EB1E601E0500830F93"] setValue:mutableArray forKey:@"buildPhases"];
-//    NSData* outputData = [NSPropertyListSerialization dataWithPropertyList:mutableDict format:NSPropertyListXMLFormat_v1_0 options:0 error:nil];
-//    [outputData writeToFile:outputPath atomically:YES];
-//    NSLog(@"what ever");
-//
-//
-//    ECBuildPhases* buildPhases = [[ECBuildPhases alloc] init];
-//    buildPhases.shellScript = @"pwd";
-//    [[ECPbProjHelper sharedInstance] insertBuildPhase:buildPhases inDictionary:mutableDict withIndex:0];
-//
+    self.configurationFilePathControl.delegate = self;
 }
 
 - (IBAction)onHandleFIlePathChange:(id)sender {
-    
     NSLog(@"sender is ");
     NSString* samplePath = [[sender URL] path];
     self.lastPathSelected = samplePath;
 }
 
+- (void)viewDidAppear {
+    [super viewDidAppear];
+    
+}
 
+- (IBAction)onHandleConfigurationFilePathControlChange:(id)sender {
+    NSLog(@"sender is ");
+    NSString* samplePath = [[sender URL] path];
+    self.configurationPlistSelected = samplePath;
+}
 
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
     // Update the view, if already loaded.
 }
+
 - (IBAction)onHandleIntergrationClicked:(id)sender {
     if (!self.lastPathSelected) {
         return ;
@@ -76,6 +61,7 @@
 - (BOOL)pathControl:(NSPathControl *)pathControl shouldDragItem:(NSPathControlItem *)pathItem withPasteboard:(NSPasteboard *)pasteboard {
     return YES;
 }
+
 - (BOOL)pathControl:(NSPathControl *)pathControl shouldDragPathComponentCell:(NSPathComponentCell *)pathComponentCell withPasteboard:(NSPasteboard *)pasteboard {
     return  YES;
 }
@@ -87,6 +73,24 @@
         NSLog(@"Cannot found project in path %@",workspcaePath);
         return NO;
     }
+    
+    
+    NSString* configurationPath = self.configurationPlistSelected;
+    if (!configurationPath) {
+        return NO;
+    }
+    
+    NSArray* configurationFileList;
+    if ([configurationPath.lastPathComponent isEqualToString:@"zip"]) {
+        // 压缩包
+        configurationFileList = [ArchiveHelper unArchiveWithZip:configurationPath];
+    } else {
+        //safari 自动解压
+        configurationFileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:configurationPath error:nil];
+    }
+    
+    
+    
     NSArray* fileList = [CocoaUtil findFilesWithExtension:@"plist" inFolder:workspcaePath];//[[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
     
     NSArray* test = [CocoaUtil findFilesWithFileName:@"AppDelegate.h" inDirectory:workspcaePath];
@@ -198,6 +202,11 @@
     return YES;
 }
 
+- (void)showWebview {
+    WebViewController* webviewController = [[WebViewController alloc] init];
+    [self presentViewControllerAsModalWindow:webviewController];
+}
+
 - (void)showAlertWithTitle:(NSString*)title content:(NSString*)content {
     NSAlert* alert = [NSAlert new];
     [alert setMessageText:title];
@@ -208,5 +217,7 @@
         
     }];
 }
+
+
 
 @end

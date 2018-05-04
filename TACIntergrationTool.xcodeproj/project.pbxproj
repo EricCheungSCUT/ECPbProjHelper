@@ -19,10 +19,17 @@
 		A8481736208A14890039AA5B /* project.pbxproj in Resources */ = {isa = PBXBuildFile; fileRef = A8481735208A14890039AA5B /* project.pbxproj */; };
 		A848173A208A1E900039AA5B /* ECPbProjHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8481739208A1E900039AA5B /* ECPbProjHelper.m */; };
 		A848173D208A1EA20039AA5B /* ECBuildPhases.m in Sources */ = {isa = PBXBuildFile; fileRef = A848173C208A1EA20039AA5B /* ECBuildPhases.m */; };
+		A88914DB209B39D5006A457D /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88914DA209B39D5006A457D /* ZipArchive.framework */; };
+		A88914DC209B3A3B006A457D /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88914DA209B39D5006A457D /* ZipArchive.framework */; };
+		A88914DD209B3A3B006A457D /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A88914DA209B39D5006A457D /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A88914E1209B3A99006A457D /* ArchiveHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A88914E0209B3A99006A457D /* ArchiveHelper.m */; };
 		A89FF40F208F206200CDF17E /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89FF40E208F206200CDF17E /* YYModel.framework */; };
 		A89FF413208F209200CDF17E /* ECProjectBuildConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FF412208F209200CDF17E /* ECProjectBuildConfiguration.m */; };
 		A89FF416208F5DB300CDF17E /* CocoaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FF415208F5DB300CDF17E /* CocoaUtil.m */; };
 		A89FF419208F5F5400CDF17E /* NSArray+Pbxproj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FF418208F5F5400CDF17E /* NSArray+Pbxproj.m */; };
+		A8FCF6B82099B749000E6A95 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FCF6B62099B749000E6A95 /* WebViewController.m */; };
+		A8FCF6B92099B749000E6A95 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8FCF6B72099B749000E6A95 /* WebViewController.xib */; };
+		A8FCF6BD209AB9F9000E6A95 /* MCGTKGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FCF6BB209AB9F9000E6A95 /* MCGTKGenerator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,20 @@
 			remoteInfo = TACIntergrationTool;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A88914DE209B3A3B006A457D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A88914DD209B3A3B006A457D /* ZipArchive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		456B82FB208AE8FC001A3F69 /* FileUtilies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtilies.h; sourceTree = "<group>"; };
@@ -68,6 +89,9 @@
 		A8481739208A1E900039AA5B /* ECPbProjHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPbProjHelper.m; sourceTree = "<group>"; };
 		A848173B208A1EA20039AA5B /* ECBuildPhases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECBuildPhases.h; sourceTree = "<group>"; };
 		A848173C208A1EA20039AA5B /* ECBuildPhases.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECBuildPhases.m; sourceTree = "<group>"; };
+		A88914DA209B39D5006A457D /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZipArchive.framework; sourceTree = "<group>"; };
+		A88914DF209B3A99006A457D /* ArchiveHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArchiveHelper.h; sourceTree = "<group>"; };
+		A88914E0209B3A99006A457D /* ArchiveHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArchiveHelper.m; sourceTree = "<group>"; };
 		A89FF40D208F1CB100CDF17E /* ECProjectHelperConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECProjectHelperConstants.h; sourceTree = "<group>"; };
 		A89FF40E208F206200CDF17E /* YYModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YYModel.framework; sourceTree = "<group>"; };
 		A89FF411208F209200CDF17E /* ECProjectBuildConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECProjectBuildConfiguration.h; sourceTree = "<group>"; };
@@ -76,6 +100,11 @@
 		A89FF415208F5DB300CDF17E /* CocoaUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaUtil.m; sourceTree = "<group>"; };
 		A89FF417208F5F5400CDF17E /* NSArray+Pbxproj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Pbxproj.h"; sourceTree = "<group>"; };
 		A89FF418208F5F5400CDF17E /* NSArray+Pbxproj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Pbxproj.m"; sourceTree = "<group>"; };
+		A8FCF6B52099B749000E6A95 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		A8FCF6B62099B749000E6A95 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		A8FCF6B72099B749000E6A95 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		A8FCF6BB209AB9F9000E6A95 /* MCGTKGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MCGTKGenerator.cpp; sourceTree = "<group>"; };
+		A8FCF6BC209AB9F9000E6A95 /* MCGTKGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MCGTKGenerator.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +112,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88914DC209B3A3B006A457D /* ZipArchive.framework in Frameworks */,
 				A89FF40F208F206200CDF17E /* YYModel.framework in Frameworks */,
+				A88914DB209B39D5006A457D /* ZipArchive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +158,9 @@
 		A83463222080D506002E4A26 /* TACIntergrationTool */ = {
 			isa = PBXGroup;
 			children = (
+				A88914E2209B3AA1006A457D /* Tools */,
+				A88914DA209B39D5006A457D /* ZipArchive.framework */,
+				A8FCF6BA209AB962000E6A95 /* TencentCloudHelper */,
 				A89FF40E208F206200CDF17E /* YYModel.framework */,
 				A8481737208A1E690039AA5B /* ECPbxprojHelper */,
 				A8481735208A14890039AA5B /* project.pbxproj */,
@@ -141,6 +175,9 @@
 				A83463312080D506002E4A26 /* TACIntergrationTool.entitlements */,
 				A83463532080D9DF002E4A26 /* FileUtils.h */,
 				A83463542080D9DF002E4A26 /* FileUtils.m */,
+				A8FCF6B52099B749000E6A95 /* WebViewController.h */,
+				A8FCF6B62099B749000E6A95 /* WebViewController.m */,
+				A8FCF6B72099B749000E6A95 /* WebViewController.xib */,
 			);
 			path = TACIntergrationTool;
 			sourceTree = "<group>";
@@ -182,6 +219,15 @@
 			path = ECPbxprojHelper;
 			sourceTree = "<group>";
 		};
+		A88914E2209B3AA1006A457D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A88914DF209B3A99006A457D /* ArchiveHelper.h */,
+				A88914E0209B3A99006A457D /* ArchiveHelper.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		A89FF410208F207300CDF17E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +235,15 @@
 				A89FF412208F209200CDF17E /* ECProjectBuildConfiguration.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A8FCF6BA209AB962000E6A95 /* TencentCloudHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A8FCF6BB209AB9F9000E6A95 /* MCGTKGenerator.cpp */,
+				A8FCF6BC209AB9F9000E6A95 /* MCGTKGenerator.hpp */,
+			);
+			path = TencentCloudHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +256,7 @@
 				A834631C2080D506002E4A26 /* Sources */,
 				A834631D2080D506002E4A26 /* Frameworks */,
 				A834631E2080D506002E4A26 /* Resources */,
+				A88914DE209B3A3B006A457D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,6 +315,11 @@
 					A834631F2080D506002E4A26 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					A83463352080D506002E4A26 = {
 						CreatedOnToolsVersion = 9.2;
@@ -300,6 +361,7 @@
 				A8481736208A14890039AA5B /* project.pbxproj in Resources */,
 				A834632A2080D506002E4A26 /* Assets.xcassets in Resources */,
 				A834632D2080D506002E4A26 /* Main.storyboard in Resources */,
+				A8FCF6B92099B749000E6A95 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +386,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FCF6BD209AB9F9000E6A95 /* MCGTKGenerator.cpp in Sources */,
 				456B82FD208AE8FC001A3F69 /* FileUtilies.m in Sources */,
+				A88914E1209B3A99006A457D /* ArchiveHelper.m in Sources */,
 				A848173D208A1EA20039AA5B /* ECBuildPhases.m in Sources */,
+				A8FCF6B82099B749000E6A95 /* WebViewController.m in Sources */,
 				A848173A208A1E900039AA5B /* ECPbProjHelper.m in Sources */,
 				A83463282080D506002E4A26 /* ViewController.m in Sources */,
 				A83463302080D506002E4A26 /* main.m in Sources */,
