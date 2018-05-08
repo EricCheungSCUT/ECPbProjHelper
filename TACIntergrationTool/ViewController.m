@@ -12,6 +12,7 @@
 #import "CocoaUtil.h"
 #import "WebViewController.h"
 #import "ArchiveHelper.h"
+#import "FileUtilies.h"
 @import WebKit;
 
 @interface ViewController()<NSPathControlDelegate,NSViewControllerPresentationAnimator>
@@ -66,6 +67,45 @@
     return  YES;
 }
 
+- (BOOL) insertPlistConfigurationFileIn:(NSString*)pbxprojFilePath configurationFilePath:(NSString*)configurationFilePath {
+    if (!configurationFilePath) {
+        return NO;
+    }
+    NSMutableDictionary* mutableDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:pbxprojFilePath];
+    NSArray* configurationFileList = [FileUtilies generateConfigurationFileListFromZipOrPath:configurationFilePath];
+    for (NSString* filePath in configurationFileList) {
+        ECProjectFileReference* testFileReference = [[ECProjectFileReference alloc] init];
+        testFileReference.isa = @"PBXFileReference";
+        testFileReference.fileEncoding = 4;
+        testFileReference.lastKnownFileType = @"text.plist.xml";
+        testFileReference.path = filePath.lastPathComponent;
+        testFileReference.sourceTree = @"SOURCE_ROOT";
+        [[ECPbProjHelper sharedInstance] insertFileReference:testFileReference inDictionary:mutableDictionary];
+        [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxprojFilePath];
+    }
+    return YES;
+}
+
+- (BOOL) moveConfigurationPlistFileIntoSourceRootWithCongfigurationFilePath:(NSString*)configurationFilePath workspacePath:(NSString* )workspacePath {
+    NSArray* configurationFileList = [FileUtilies generateConfigurationFileListFromZipOrPath:configurationFilePath];
+    for (NSString* filePath in configurationFileList) {
+        NSString* destinationPath = [workspacePath stringByAppendingPathComponent:filePath.lastPathComponent];
+//        NSData* fileData = [[NSData alloc] initWithContentsOfFile:filePath];
+//        BOOL canWrite = [[NSFileManager defaultManager] isWritableFileAtPath:destinationPath];
+//        if (canWrite) {
+//            [fileData writeToFile:destinationPath atomically:YES];
+//        } else {
+//            NSLog(@"Cannot write to %@!",destinationPath);
+//        }
+        NSError* error;
+        [[NSFileManager defaultManager] moveItemAtPath:filePath toPath:destinationPath error:&error];
+        if (error) {
+            NSLog(@"Move file error!%@",error);
+        }
+    }
+    return YES;
+}
+
 - (BOOL)insertPlistFileInPath:(NSString*)workspcaePath {
     NSError* error;
     NSString* projectName = [[FileUtils sharedInstance] projectNameFromPath:workspcaePath];
@@ -73,24 +113,13 @@
         NSLog(@"Cannot found project in path %@",workspcaePath);
         return NO;
     }
+    NSString* configurationFilePath = self.configurationPlistSelected;
+    NSString* pbxcprojPath = [workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName];
+    [self moveConfigurationPlistFileIntoSourceRootWithCongfigurationFilePath:configurationFilePath workspacePath:workspcaePath];
+    [self insertPlistConfigurationFileIn:pbxcprojPath configurationFilePath:self.configurationPlistSelected];
     
     
-    NSString* configurationPath = self.configurationPlistSelected;
-    if (!configurationPath) {
-        return NO;
-    }
-    
-    NSArray* configurationFileList;
-    if ([configurationPath.lastPathComponent isEqualToString:@"zip"]) {
-        // 压缩包
-        configurationFileList = [ArchiveHelper unArchiveWithZip:configurationPath];
-    } else {
-        //safari 自动解压
-        configurationFileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:configurationPath error:nil];
-    }
-    
-    
-    
+    return YES;
     NSArray* fileList = [CocoaUtil findFilesWithExtension:@"plist" inFolder:workspcaePath];//[[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
     
     NSArray* test = [CocoaUtil findFilesWithFileName:@"AppDelegate.h" inDirectory:workspcaePath];
@@ -135,7 +164,6 @@
         
     }
     
-    
     if (!infoPlist) {
         NSLog(@"Info.plist not found in %@",workspcaePath);
     }
@@ -170,7 +198,6 @@
     [[ECPbProjHelper sharedInstance] insertBuildPhase:buildPhases inDictionary:mutableDictionary withIndex:0];
     
     
-    NSString* pbxcprojPath = [workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName];
     
     [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxcprojPath];
 

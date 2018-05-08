@@ -7,7 +7,7 @@
 //
 
 #import "FileUtilies.h"
-
+#import "ArchiveHelper.h"
 @implementation FileUtilies
 + (NSDictionary*) dictionaryFromPlistFile:(NSString*)path {
     if ([[NSFileManager defaultManager] isReadableFileAtPath:path]) {
@@ -26,4 +26,24 @@
     }
     return [plistData writeToFile:path atomically:YES];
 }
+
++ (NSArray*) generateConfigurationFileListFromZipOrPath:(NSString*)configurationFilePath {
+    NSArray<NSString*>* configurationFileList;
+    if ([configurationFilePath.lastPathComponent isEqualToString:@"zip"]) {
+        // 压缩包
+        configurationFileList = [ArchiveHelper unArchiveWithZip:configurationFilePath];
+    } else {
+        //safari 自动解压
+        NSMutableArray* configurationFileNameList = [NSMutableArray array];
+        for( NSString* fileName in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:configurationFilePath error:nil]) {
+            if (![fileName hasSuffix:@"plist"]) {
+                continue;
+            }
+            [configurationFileNameList addObject:[configurationFilePath stringByAppendingPathComponent:fileName]];
+        }
+        configurationFileList = [configurationFileNameList copy];
+    }
+    return configurationFileList;
+}
+
 @end

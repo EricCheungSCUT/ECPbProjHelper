@@ -12,4 +12,5 @@
 + (NSDictionary*) dictionaryFromPlistFile:(NSString*)path;
 
 + (BOOL) writePlistDataToPath:(NSString*)path withDictionary:(NSDictionary*) dictionary;
++ (NSArray*) generateConfigurationFileListFromZipOrPath:(NSString*)path;
 @end

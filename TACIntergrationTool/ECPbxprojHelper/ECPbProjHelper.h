@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ECBuildPhases.h"
+#import "ECProjectFileReference.h"
+#import "ECProjectTarget.h"
 @interface ECPbProjHelper : NSObject
 + (instancetype)sharedInstance;
 
@@ -24,6 +26,21 @@
             inDictionary:(NSMutableDictionary*) dictionary
                withIndex:(NSInteger)index;
 
+
+/**
+ Insert file reference into project settings.
+ Every time we dragging a file into xcode projects, xcode finish the following 4 steps for us:
+ 1. Decalre file attributes (like fileEncoding, type, path etc)
+ 2. Add file into build phases's source or resources
+ 3. Declare file in build file section
+ 4. Declare file in whole group
+
+ @param fileReference file reference instance
+ @param dictionary dictionary transformed from pbxproj file that should be modified
+ @return whether the insertion is success or not. If insertion fails, there might be several reasons, such as buildPhases is not in correct format, dictionary is not mutable nor properly pbxproj data, etc. Log will provide you with more information.
+ */
+- (BOOL)insertFileReference:(ECProjectFileReference*)fileReference
+               inDictionary:(NSMutableDictionary*)dictionary;
 
 /**
  get UUID of root Object
