@@ -111,7 +111,7 @@
     //Step 1 . Insert in objects declaration
     NSString*      declarationUUID = [self generateUUIDInPlist:dictionary];
     NSString*      step1KeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,declarationUUID];
-    NSDictionary*  step1Value = @{@"isa":fileReference.isa,@"fileRef":fileReferenceUUID};
+    NSDictionary*  step1Value = @{@"isa":@"PBXBuildFile",@"fileRef":fileReferenceUUID};
     [dictionary setValue:step1Value forKeyPath:step1KeyPath];
     
     //step2. Insert file reference object in obejcts declaration
@@ -136,7 +136,6 @@
     
     NSString* appGroupKeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,APPGroupKey];
     [dictionary setValue:[APPGroup yy_modelToJSONObject] forKeyPath:appGroupKeyPath];
-    return YES;
 
     //step4 Insert in target's build phases section file (DeclarationUUID is the one should be inserted here, not fileReferenceUUID)
     NSArray* targets = [self getTargets:dictionary];
@@ -153,10 +152,12 @@
         }
     }
     NSMutableArray* files = buildPhases.files.mutableCopy;
-    [files insertObject:declarationUUID atIndex:0];
+//    [files insertObject:declarationUUID atIndex:0];
+    [files addObject:fileReferenceUUID];
     buildPhases.files = [files copy];
-    NSString* buildPhasesKeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,buildPhasesUUID];
-    [dictionary setValue:[buildPhases yy_modelToJSONObject] forKeyPath:buildPhasesKeyPath];
+    NSString* buildPhasesKeyPath = [NSString stringWithFormat:@"%@.%@.%@",kObjectsKey,buildPhasesUUID,@"files"];
+//    [dictionary setValue:[buildPhases yy_modelToJSONObject] forKeyPath:buildPhasesKeyPath];
+    [dictionary setValue:files forKeyPath:buildPhasesKeyPath];
     return YES;
 }
 

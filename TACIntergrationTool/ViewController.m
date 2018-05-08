@@ -90,15 +90,8 @@
     NSArray* configurationFileList = [FileUtilies generateConfigurationFileListFromZipOrPath:configurationFilePath];
     for (NSString* filePath in configurationFileList) {
         NSString* destinationPath = [workspacePath stringByAppendingPathComponent:filePath.lastPathComponent];
-//        NSData* fileData = [[NSData alloc] initWithContentsOfFile:filePath];
-//        BOOL canWrite = [[NSFileManager defaultManager] isWritableFileAtPath:destinationPath];
-//        if (canWrite) {
-//            [fileData writeToFile:destinationPath atomically:YES];
-//        } else {
-//            NSLog(@"Cannot write to %@!",destinationPath);
-//        }
         NSError* error;
-        [[NSFileManager defaultManager] moveItemAtPath:filePath toPath:destinationPath error:&error];
+        [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:destinationPath error:&error];
         if (error) {
             NSLog(@"Move file error!%@",error);
         }
