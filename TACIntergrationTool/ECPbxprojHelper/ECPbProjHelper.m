@@ -134,7 +134,6 @@
     NSString* appGroupKeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,APPGroupKey];
     [dictionary setValue:[APPGroup yy_modelToJSONObject] forKeyPath:appGroupKeyPath];
 
-//    return YES;
     //step4 Insert in target's build phases section file (DeclarationUUID is the one should be inserted here, not fileReferenceUUID)
     [self addFileReference:declarationUUID IntoCopyBundleResources:dictionary];
     return YES;
