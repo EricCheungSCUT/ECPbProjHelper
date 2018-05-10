@@ -109,10 +109,7 @@
     }
     NSString* fileReferenceUUID = [self generateUUIDInPlist:dictionary];
     //Step 1 . Insert in objects declaration
-    NSString*      declarationUUID = [self generateUUIDInPlist:dictionary];
-    NSString*      step1KeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,declarationUUID];
-    NSDictionary*  step1Value = @{@"isa":@"PBXBuildFile",@"fileRef":fileReferenceUUID};
-    [dictionary setValue:step1Value forKeyPath:step1KeyPath];
+    NSString*      declarationUUID = [self addFileRefenceWithType:@"PBXBuildFile" fileReferenceUUID:fileReferenceUUID inDictionary:dictionary];
     
     //step2. Insert file reference object in obejcts declaration
     NSString*     step2KeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,fileReferenceUUID];
@@ -137,14 +134,48 @@
     NSString* appGroupKeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,APPGroupKey];
     [dictionary setValue:[APPGroup yy_modelToJSONObject] forKeyPath:appGroupKeyPath];
 
+//    return YES;
     //step4 Insert in target's build phases section file (DeclarationUUID is the one should be inserted here, not fileReferenceUUID)
-    NSArray* targets = [self getTargets:dictionary];
+    [self addFileReference:declarationUUID IntoCopyBundleResources:dictionary];
+    return YES;
+}
+
+#pragma mark - File Reference related
+
+
+
+/**
+ Declare file refence in pbxproj file's object field.
+
+ @param fileType file type, like PBXBuildFile
+ @param fileReferenceUUID value of key fileRef, fileReference's UUID
+ @param pbxprojDictionary dictionary generate from pbxproj file
+ @return uuid of  this record
+ */
+- (NSString*) addFileRefenceWithType:(NSString*)fileType fileReferenceUUID:(NSString*)fileReferenceUUID inDictionary:(NSDictionary*)pbxprojDictionary {
+    //todo: exclude duplicated part
+    NSString*      declarationUUID = [self generateUUIDInPlist:pbxprojDictionary];
+    NSString*      step1KeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,declarationUUID];
+    NSDictionary*  step1Value = @{@"isa":fileType,@"fileRef":fileReferenceUUID};
+    [pbxprojDictionary setValue:step1Value forKeyPath:step1KeyPath];
+    return declarationUUID;
+}
+
+/**
+ Add file in project's application target (first target)'s copy bundle resources build phases
+
+ @param PBXBuildFileUUID PBXBuildFileUUID, not UUID of file reference
+ @param pbxprojDictionary dictionary generated fromm pbxproj file
+ @return insert success or not
+ */
+- (BOOL) addFileReference:(NSString*)PBXBuildFileUUID  IntoCopyBundleResources:(NSMutableDictionary*)pbxprojDictionary {
+    NSArray* targets = [self getTargets:pbxprojDictionary];
     NSString* APPTarget = targets.firstObject;
-    ECProjectTarget* target =[ECProjectTarget yy_modelWithJSON:dictionary[kObjectsKey][APPTarget]];
+    ECProjectTarget* target =[ECProjectTarget yy_modelWithJSON:pbxprojDictionary[kObjectsKey][APPTarget]];
     ECBuildPhases* buildPhases;
     NSString* buildPhasesUUID;
     for (NSString* tempBuildPhasesUUID in target.buildPhases) {
-        ECBuildPhases* tempBuildPhases = [ECBuildPhases yy_modelWithJSON:dictionary[kObjectsKey][tempBuildPhasesUUID]];
+        ECBuildPhases* tempBuildPhases = [ECBuildPhases yy_modelWithJSON:pbxprojDictionary[kObjectsKey][tempBuildPhasesUUID]];
         if ([tempBuildPhases.isa isEqualToString:@"PBXResourcesBuildPhase"]) {
             buildPhases  = tempBuildPhases;
             buildPhasesUUID = tempBuildPhasesUUID;
@@ -152,14 +183,22 @@
         }
     }
     NSMutableArray* files = buildPhases.files.mutableCopy;
-//    [files insertObject:declarationUUID atIndex:0];
-    [files addObject:fileReferenceUUID];
+    BOOL alreadyExist = NO;
+    for (NSString* fileUUID in files) {
+        if ([fileUUID isEqualToString:PBXBuildFileUUID]) {
+            alreadyExist = YES;
+            break;
+        }
+    }
+    if (!alreadyExist) {
+        [files addObject:PBXBuildFileUUID];
+    }
     buildPhases.files = [files copy];
     NSString* buildPhasesKeyPath = [NSString stringWithFormat:@"%@.%@.%@",kObjectsKey,buildPhasesUUID,@"files"];
-//    [dictionary setValue:[buildPhases yy_modelToJSONObject] forKeyPath:buildPhasesKeyPath];
-    [dictionary setValue:files forKeyPath:buildPhasesKeyPath];
+    [pbxprojDictionary setValue:files forKeyPath:buildPhasesKeyPath];
     return YES;
 }
+
 
 #pragma mark - Basic Functions
 
