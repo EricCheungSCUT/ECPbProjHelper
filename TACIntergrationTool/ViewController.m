@@ -80,7 +80,11 @@
         testFileReference.lastKnownFileType = @"text.plist.xml";
         testFileReference.path = filePath.lastPathComponent;
         testFileReference.sourceTree = @"SOURCE_ROOT";
-        [[ECPbProjHelper sharedInstance] insertFileReference:testFileReference inDictionary:mutableDictionary];
+        BOOL copyIntoBundleResources = YES;
+        if ([filePath.lastPathComponent isEqualToString:@"tac_services_configurations_unpackage.plist"]) {
+            copyIntoBundleResources = NO;
+        }
+        [[ECPbProjHelper sharedInstance] insertFileReference:testFileReference inDictionary:mutableDictionary copyIntoBundleResources:copyIntoBundleResources];
         [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxprojFilePath];
     }
     return YES;
@@ -110,9 +114,8 @@
     NSString* pbxcprojPath = [workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName];
     [self moveConfigurationPlistFileIntoSourceRootWithCongfigurationFilePath:configurationFilePath workspacePath:workspcaePath];
     [self insertPlistConfigurationFileIn:pbxcprojPath configurationFilePath:self.configurationPlistSelected];
-    
-    
-    return YES;
+//    [self showAlertWithTitle:@"配置成功" content:@"请打开项目配置文件"];
+
     NSArray* fileList = [CocoaUtil findFilesWithExtension:@"plist" inFolder:workspcaePath];//[[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
     
     NSArray* test = [CocoaUtil findFilesWithFileName:@"AppDelegate.h" inDirectory:workspcaePath];
@@ -128,11 +131,11 @@
     NSArray * contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:currentPath error:nil];
     NSArray* plistFiles = [[FileUtils sharedInstance] findPlistFile:contents];
 //if cannot found the plist file,down deeper into project directory
-    if (plistFiles.count == 0) {
+//    if (plistFiles.count == 0) {
         currentPath = [currentPath stringByAppendingPathComponent:projectName];
         contents =  [[NSFileManager defaultManager] contentsOfDirectoryAtPath:currentPath error:nil];
         plistFiles =[[FileUtils sharedInstance] findPlistFile:contents];
-    }
+//    }
     
     currentPath = [currentPath stringByAppendingString:@"/"];
     
@@ -198,7 +201,7 @@
     NSString* buildAfterShell;
     if (directoryTest.count == 0) {
         //means intergrate via cocoapods
-        buildAfterShell=@"${PODS_ROOT}/TACCore/Scripts/tac.run.all.after.sh";
+        buildAfterShell=@"if [ -f \"${PODS_ROOT}/TACCore/Scripts/tac.run.all.after.sh\"]; then \n${PODS_ROOT}/TACCore/Scripts/tac.run.all.after.sh\nfi";
     } else {
         NSString* crashFrameworkPath = [[directoryTest firstObject] stringByAppendingString:@"/Scripts/run"];
         NSInteger SRCRootLength = workspcaePath.length;

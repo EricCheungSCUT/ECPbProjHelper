@@ -25,38 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/ViewController.m"
-            timestampString = "547614225.131901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-insertPlistFileInPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/ViewController.m"
-            timestampString = "547614225.132575"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "-insertPlistFileInPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TACIntergrationTool/WebViewController.m"
             timestampString = "546949534.241978"
             startingColumnNumber = "9223372036854775807"
@@ -74,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TACIntergrationTool/ViewController.m"
-            timestampString = "547614225.132779"
+            timestampString = "548082115.0358911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-insertPlistFileInPath:"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-moveConfigurationPlistFileIntoSourceRootWithCongfigurationFilePath:workspacePath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,29 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/ECPbxprojHelper/ECPbProjHelper.m"
-            timestampString = "547614225.132939"
+            filePath = "TACIntergrationTool/Tools/ArchiveHelper.m"
+            timestampString = "548082115.0363179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-insertFileReference:inDictionary:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TACIntergrationTool/ECPbxprojHelper/ECPbProjHelper.m"
-            timestampString = "547614225.133513"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "-insertFileReference:inDictionary:"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "+unArchiveWithZip:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

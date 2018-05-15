@@ -72,6 +72,18 @@
         NSLog(@"target configuration:%@",buildConfiguration);
         
         NSString* firstBuildPhasesUUID = buildConfiguration.buildPhases.firstObject;
+        BOOL shouldContinue = NO;;
+        for (NSString* buildPhasesUUID in buildConfiguration.buildPhases) {
+            ECBuildPhases* bh = [self getBuildPhasesWithUUID:buildPhasesUUID inDictionary:dictionary];
+            if ([bh.name isEqualToString:buildPhases.name]) {
+                NSLog(@"Found build phases with same name, skip %@",buildPhases.name);
+                shouldContinue = YES;
+                break;
+            }
+        }
+        if (shouldContinue) {
+            continue;
+        }
         ECBuildPhases* tempBuildPhases = [self getBuildPhasesWithUUID:firstBuildPhasesUUID inDictionary:dictionary];
         buildPhases.buildActionMask =  tempBuildPhases.buildActionMask;
         NSString* buildPhasesUUID = [self generateUUIDInPlist:dictionary];
@@ -103,7 +115,8 @@
 
 
 - (BOOL)insertFileReference:(ECProjectFileReference*)fileReference
-               inDictionary:(NSMutableDictionary*)dictionary {
+               inDictionary:(NSMutableDictionary*)dictionary
+    copyIntoBundleResources:(BOOL)copyIntoBundleResources {
     if (![self checkDictionaryValid:dictionary]) {
         return NO;
     }
@@ -134,6 +147,9 @@
     NSString* appGroupKeyPath = [NSString stringWithFormat:@"%@.%@",kObjectsKey,APPGroupKey];
     [dictionary setValue:[APPGroup yy_modelToJSONObject] forKeyPath:appGroupKeyPath];
 
+    if (!copyIntoBundleResources) {
+        return  YES;
+    }
     //step4 Insert in target's build phases section file (DeclarationUUID is the one should be inserted here, not fileReferenceUUID)
     [self addFileReference:declarationUUID IntoCopyBundleResources:dictionary];
     return YES;

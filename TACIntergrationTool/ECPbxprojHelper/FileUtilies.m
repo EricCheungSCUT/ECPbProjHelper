@@ -29,7 +29,7 @@
 
 + (NSArray*) generateConfigurationFileListFromZipOrPath:(NSString*)configurationFilePath {
     NSArray<NSString*>* configurationFileList;
-    if ([configurationFilePath.lastPathComponent isEqualToString:@"zip"]) {
+    if ([configurationFilePath.pathExtension isEqualToString:@"zip"]) {
         // 压缩包
         configurationFileList = [ArchiveHelper unArchiveWithZip:configurationFilePath];
     } else {

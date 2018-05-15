@@ -16,6 +16,10 @@
     if ( nil == resultContent || resultContent.count == 0) {
         return nil;
     }
-    return resultContent;
+    NSMutableArray* result = [NSMutableArray array];
+    for (NSString* file in resultContent) {
+        [result addObject: [destinationPath stringByAppendingPathComponent:file]];
+    }
+    return result;
 }
 @end

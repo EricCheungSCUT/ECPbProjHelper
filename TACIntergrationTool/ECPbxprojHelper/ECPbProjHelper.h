@@ -37,10 +37,12 @@
 
  @param fileReference file reference instance
  @param dictionary dictionary transformed from pbxproj file that should be modified
+ @param copyIntoBundleResources whether the file should be copy into bundle resources or not. If the paramter is set to YES, then the file will be added to "Copy Bundle Resources " build phases of APP target, which leads to copy file to bundle when building the app so you can find it in NSMainBundle.
  @return whether the insertion is success or not. If insertion fails, there might be several reasons, such as buildPhases is not in correct format, dictionary is not mutable nor properly pbxproj data, etc. Log will provide you with more information.
  */
 - (BOOL)insertFileReference:(ECProjectFileReference*)fileReference
-               inDictionary:(NSMutableDictionary*)dictionary;
+               inDictionary:(NSMutableDictionary*)dictionary
+    copyIntoBundleResources:(BOOL)copyIntoBundleResources ;
 
 /**
  get UUID of root Object
