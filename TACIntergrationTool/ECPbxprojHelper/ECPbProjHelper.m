@@ -70,23 +70,23 @@
     for (NSString* string in targets) {
         ECProjectBuildConfiguration* buildConfiguration = [self getConfigurationInTarget:string dictionary:dictionary];
         NSLog(@"target configuration:%@",buildConfiguration);
-        
+        NSString* buildPhasesUUID = [self generateUUIDInPlist:dictionary];
         NSString* firstBuildPhasesUUID = buildConfiguration.buildPhases.firstObject;
-        BOOL shouldContinue = NO;;
-        for (NSString* buildPhasesUUID in buildConfiguration.buildPhases) {
-            ECBuildPhases* bh = [self getBuildPhasesWithUUID:buildPhasesUUID inDictionary:dictionary];
+        BOOL shouldReplace = NO;;
+        for (NSString* eachBuildPhasesUUID in buildConfiguration.buildPhases) {
+            ECBuildPhases* bh = [self getBuildPhasesWithUUID:eachBuildPhasesUUID inDictionary:dictionary];
             if ([bh.name isEqualToString:buildPhases.name]) {
                 NSLog(@"Found build phases with same name, skip %@",buildPhases.name);
-                shouldContinue = YES;
+                buildPhasesUUID = eachBuildPhasesUUID;
+                shouldReplace = YES;
                 break;
             }
         }
-        if (shouldContinue) {
-            continue;
-        }
+//        if (shouldReplace) {
+//            continue;
+//        }
         ECBuildPhases* tempBuildPhases = [self getBuildPhasesWithUUID:firstBuildPhasesUUID inDictionary:dictionary];
         buildPhases.buildActionMask =  tempBuildPhases.buildActionMask;
-        NSString* buildPhasesUUID = [self generateUUIDInPlist:dictionary];
         NSMutableArray* mutableBuildPhases = [buildConfiguration.buildPhases mutableCopy];
         if (mutableBuildPhases.count == 0) {
             return NO;
