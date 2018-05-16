@@ -82,12 +82,14 @@
                 break;
             }
         }
-//        if (shouldReplace) {
-//            continue;
-//        }
+
         ECBuildPhases* tempBuildPhases = [self getBuildPhasesWithUUID:firstBuildPhasesUUID inDictionary:dictionary];
         buildPhases.buildActionMask =  tempBuildPhases.buildActionMask;
         NSMutableArray* mutableBuildPhases = [buildConfiguration.buildPhases mutableCopy];
+        if ([mutableBuildPhases containsObject:buildPhasesUUID] && shouldReplace) {
+            // if the build phases already exist ,replace new build phases with it
+            [mutableBuildPhases removeObject:buildPhasesUUID];
+        }
         if (mutableBuildPhases.count == 0) {
             return NO;
         }
@@ -102,6 +104,7 @@
             }
         }
         NSAssert(actualIndex != NSIntegerMax, @"Index invalid !");
+     
         [mutableBuildPhases insertObject:buildPhasesUUID atIndex:actualIndex];
         NSString* buildPhasesKeyPath = [NSString stringWithFormat:@"%@.%@.%@",kObjectsKey,string,kBuildPhasesKey];
         [dictionary setValue:mutableBuildPhases forKeyPath:buildPhasesKeyPath];
@@ -120,6 +123,16 @@
     if (![self checkDictionaryValid:dictionary]) {
         return NO;
     }
+    NSArray<ECProjectFileReference*>* allFileReferenceArray = [self getAllFileReferenceinDictionary:dictionary];
+    
+    for (ECProjectFileReference* existedFileReference in allFileReferenceArray) {
+        if ([existedFileReference.path isEqualToString:fileReference.path]) {
+            //file reference already exist
+            return YES ;
+        }
+    }
+    
+    
     NSString* fileReferenceUUID = [self generateUUIDInPlist:dictionary];
     //Step 1 . Insert in objects declaration
     NSString*      declarationUUID = [self addFileRefenceWithType:@"PBXBuildFile" fileReferenceUUID:fileReferenceUUID inDictionary:dictionary];
@@ -233,6 +246,21 @@
     NSString* keyPath = [NSString stringWithFormat:@"%@.%@.%@",kObjectsKey,rootObject,kTargetsKey];
     NSLog(@"keyPath is %@",keyPath);
     NSArray* result = [dict valueForKeyPath:keyPath];
+    return result;
+}
+
+
+- (NSArray<ECProjectFileReference*>*) getAllFileReferenceinDictionary:(NSDictionary*)dictionary {
+    NSMutableArray* result = [NSMutableArray array];
+    NSString* const PBXFileReferenceKey = @"PBXFileReference";
+    NSDictionary* objectsDictionary = dictionary[kObjectsKey];
+    [objectsDictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        // obj is dictionary like {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLCrashPrivInst.m; sourceTree = "<group>"; };
+        if ([[obj valueForKey:@"isa"] isEqualToString:PBXFileReferenceKey]) {
+            ECProjectFileReference* fileReference = [ECProjectFileReference yy_modelWithJSON:obj];
+            [result addObject:fileReference];
+        }
+    }];
     return result;
 }
 

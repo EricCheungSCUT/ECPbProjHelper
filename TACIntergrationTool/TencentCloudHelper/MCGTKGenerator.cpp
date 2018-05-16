@@ -7,6 +7,7 @@
 //
 
 #include "MCGTKGenerator.hpp"
+#include <stdlib.h>
 //#include "vector.h"
 //char* time33(const char* str) {
 //    size_t length = strlen(str);
@@ -18,7 +19,8 @@
 //}
 //
 //char* MCGTKGenerator::GenerateCSRF(char* skey, char* pSkey) {
-//    int csrf = time33(skey);
+//    int csrf = atoi(time33(skey));
+//
 //
 //}
 

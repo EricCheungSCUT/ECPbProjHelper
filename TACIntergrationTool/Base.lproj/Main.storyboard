@@ -707,11 +707,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="761" height="351"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOe-69-f5S">
-                                <rect key="frame" x="84" y="213" width="313" height="14"/>
+                                <rect key="frame" x="224" y="297" width="313" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="请将工程文件（xxx.xcodeproj）所在的文件夹拖入下面的框中" id="Zxe-HY-8X5">
                                     <font key="font" size="11" name=".PingFangSC-Regular"/>
@@ -720,7 +720,7 @@
                                 </textFieldCell>
                             </textField>
                             <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJR-XO-hVu">
-                                <rect key="frame" x="38" y="174" width="429" height="20"/>
+                                <rect key="frame" x="166" y="257" width="429" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="cxQ-1S-mUJ">
                                     <font key="font" metaFont="smallSystem"/>
@@ -732,7 +732,7 @@
                                 </connections>
                             </pathControl>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhw-yI-Mf1">
-                                <rect key="frame" x="213" y="20" width="79" height="28"/>
+                                <rect key="frame" x="327" y="23" width="79" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="配置" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WR3-ob-LEQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -743,7 +743,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lqv-7i-YmP">
-                                <rect key="frame" x="84" y="106" width="313" height="14"/>
+                                <rect key="frame" x="84" y="187" width="313" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="hoj-vf-fbV">
                                     <font key="font" metaFont="smallSystem"/>
@@ -752,7 +752,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woE-hI-EAu">
-                                <rect key="frame" x="-2" y="134" width="451" height="46"/>
+                                <rect key="frame" x="-2" y="215" width="451" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="ias-9z-NmB">
                                     <font key="font" size="11" name=".PingFangSC-Regular"/>
@@ -761,26 +761,37 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhC-bW-6fa">
-                                <rect key="frame" x="84" y="80" width="313" height="46"/>
+                                <rect key="frame" x="210" y="119" width="313" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="请将配置文件(xxxx.plist)所在的文件夹，或者控制台上面下载配置文件的zip压缩包直接拖入下面的框中" id="5mB-bV-Idb">
+                                <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="请将下载下来的配置文件Zip压缩包或者文件夹拖入下面的框中，或者点击右边的登录按钮，在弹出的网页中登录账号，并选择需要的配置，点击控制台上的“下载配置”按钮" id="5mB-bV-Idb">
                                     <font key="font" size="11" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbQ-Op-g7y">
-                                <rect key="frame" x="38" y="58" width="429" height="20"/>
+                                <rect key="frame" x="166" y="65" width="429" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="mrg-CJ-CQk">
                                     <font key="font" metaFont="smallSystem"/>
                                     <url key="url" string="file://localhost/Applications/"/>
-                                    <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
                                 </pathCell>
                                 <connections>
                                     <action selector="onHandleConfigurationFilePathControlChange:" target="XfG-lQ-9wD" id="NW5-2D-1jQ"/>
                                 </connections>
                             </pathControl>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-ks-BXV">
+                                <rect key="frame" x="547" y="127" width="94" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="登录选择配置" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VbO-7t-fUn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="11" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onHandleLoginButtonClicked:" target="XfG-lQ-9wD" id="SMm-3W-XvJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -790,7 +801,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="42.5" y="695.5"/>
         </scene>
     </scenes>
 </document>

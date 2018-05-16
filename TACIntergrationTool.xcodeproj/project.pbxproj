@@ -20,6 +20,7 @@
 		A83463552080D9DF002E4A26 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A83463542080D9DF002E4A26 /* FileUtils.m */; };
 		A8352E2320A0610D008EEF49 /* ECProjectFileReference.m in Sources */ = {isa = PBXBuildFile; fileRef = A8352E2220A0610D008EEF49 /* ECProjectFileReference.m */; };
 		A8425AFC20A0832800AC16E8 /* ECProjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A8425AFB20A0832800AC16E8 /* ECProjectGroup.m */; };
+		A844326D20ABDA7700719B1B /* TencentCloudConfigDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A844326C20ABDA7700719B1B /* TencentCloudConfigDownloader.m */; };
 		A8481736208A14890039AA5B /* project.pbxproj in Resources */ = {isa = PBXBuildFile; fileRef = A8481735208A14890039AA5B /* project.pbxproj */; };
 		A848173A208A1E900039AA5B /* ECPbProjHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A8481739208A1E900039AA5B /* ECPbProjHelper.m */; };
 		A848173D208A1EA20039AA5B /* ECBuildPhases.m in Sources */ = {isa = PBXBuildFile; fileRef = A848173C208A1EA20039AA5B /* ECBuildPhases.m */; };
@@ -96,6 +97,8 @@
 		A8352E2220A0610D008EEF49 /* ECProjectFileReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECProjectFileReference.m; sourceTree = "<group>"; };
 		A8425AFA20A0832800AC16E8 /* ECProjectGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECProjectGroup.h; sourceTree = "<group>"; };
 		A8425AFB20A0832800AC16E8 /* ECProjectGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECProjectGroup.m; sourceTree = "<group>"; };
+		A844326B20ABDA7700719B1B /* TencentCloudConfigDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCloudConfigDownloader.h; sourceTree = "<group>"; };
+		A844326C20ABDA7700719B1B /* TencentCloudConfigDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCloudConfigDownloader.m; sourceTree = "<group>"; };
 		A8481735208A14890039AA5B /* project.pbxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.pbxproject; path = project.pbxproj; sourceTree = "<group>"; };
 		A8481738208A1E900039AA5B /* ECPbProjHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPbProjHelper.h; sourceTree = "<group>"; };
 		A8481739208A1E900039AA5B /* ECPbProjHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPbProjHelper.m; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 			children = (
 				A8FCF6BB209AB9F9000E6A95 /* MCGTKGenerator.cpp */,
 				A8FCF6BC209AB9F9000E6A95 /* MCGTKGenerator.hpp */,
+				A844326B20ABDA7700719B1B /* TencentCloudConfigDownloader.h */,
+				A844326C20ABDA7700719B1B /* TencentCloudConfigDownloader.m */,
 			);
 			path = TencentCloudHelper;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				A83463302080D506002E4A26 /* main.m in Sources */,
 				A83463252080D506002E4A26 /* AppDelegate.m in Sources */,
 				A8352E2320A0610D008EEF49 /* ECProjectFileReference.m in Sources */,
+				A844326D20ABDA7700719B1B /* TencentCloudConfigDownloader.m in Sources */,
 				A89FF419208F5F5400CDF17E /* NSArray+Pbxproj.m in Sources */,
 				A89FF416208F5DB300CDF17E /* CocoaUtil.m in Sources */,
 				A83463552080D9DF002E4A26 /* FileUtils.m in Sources */,

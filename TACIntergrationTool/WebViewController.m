@@ -7,7 +7,25 @@
 //
 
 #import "WebViewController.h"
+#import "TencentCloudConfigDownloader.h"
 @import WebKit;
+
+
+@interface WKNavigationResponse(TencentCloud)
+- (BOOL)isDownloadConfigurationResponse ;
+@end
+
+@implementation WKNavigationResponse(TencentCloud)
+
+- (BOOL)isDownloadConfigurationResponse {
+    if ([self.response.URL.lastPathComponent isEqualToString:@"download_config"]) {
+        return YES;
+    }
+    return NO;
+}
+
+@end
+
 @interface WebViewController ()<WKNavigationDelegate,WKScriptMessageHandler>
 @property(nonatomic,strong) WKWebView* webview;
 @end
@@ -16,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setFrame:NSMakeRect(0, 0, 1000, 1000)];
+    [self.view setFrame:NSMakeRect(0, 0, 2000, 1000)];
     [self.view addSubview:self.webview];
 
 }
@@ -36,24 +54,18 @@
 
 - (void)viewDidAppear {
     [super viewDidAppear];
-    NSURLRequest* reuquest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://console.cloud.tencent.com"]];
+    NSURLRequest* reuquest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://console.cloud.tencent.com/tac"]];
     [self.webview loadRequest:reuquest];
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     NSLog(@"NavigationResponse:%@\n",navigationResponse);
-    NSHTTPURLResponse* response = navigationResponse.response;
-    NSArray *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:[NSURL URLWithString:@""]];
-    for (NSHTTPCookie *cookie in cookies) {
-        NSLog(@"Cookie is %@",cookie);
+    if ([navigationResponse isDownloadConfigurationResponse] ) {
+        [TencentCloudConfigDownloader  downloadConfigurationWithURL:navigationResponse.response.URL completionHandler:^(NSString *configurationZIPFilePath) {
+           // do nothing here
+        }];
     }
     decisionHandler(WKNavigationResponsePolicyAllow);
-   [[WKWebsiteDataStore defaultDataStore].httpCookieStore getAllCookies:^(NSArray<NSHTTPCookie *> * _Nonnull result) {
-       for (NSHTTPCookie* cookie in result) {
-       NSLog(@"总的 Cookie:%@",cookie);
-       }
-       
-   }];
 }
 
 - (WKWebView *)webview {

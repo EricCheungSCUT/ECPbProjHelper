@@ -13,6 +13,7 @@
 #import "WebViewController.h"
 #import "ArchiveHelper.h"
 #import "FileUtilies.h"
+#import "TencentCloudConfigDownloader.h"
 @import WebKit;
 
 @interface ViewController()<NSPathControlDelegate,NSViewControllerPresentationAnimator>
@@ -20,6 +21,8 @@
 @property (weak) IBOutlet NSPathControl *pathControl;
 @property (nonatomic,strong ) NSString* lastPathSelected;
 @property (nonatomic,strong)  NSString* configurationPlistSelected;
+@property (nonatomic, copy) NSString* lastDownloaedConfigurationFilePath;
+@property (nonatomic, strong) WebViewController* webviewController;
 @end
 
 @implementation ViewController
@@ -27,6 +30,9 @@
     [super viewDidLoad];
     self.pathControl.delegate = self;
     self.configurationFilePathControl.delegate = self;
+}
+- (IBAction)onHandleLoginButtonClicked:(id)sender {
+    [self showWebview];
 }
 
 - (IBAction)onHandleFIlePathChange:(id)sender {
@@ -37,6 +43,23 @@
 
 - (void)viewDidAppear {
     [super viewDidAppear];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onHandleConfigurationFileDownloaded:) name:kConfigurationDidDownloadKey object:nil];
+}
+
+
+- (void)viewDidDisappear {
+    [super viewDidDisappear];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)onHandleConfigurationFileDownloaded:(NSNotification*)notification {
+    NSString* configurationZipFilePath = notification.object;
+    self.lastDownloaedConfigurationFilePath = configurationZipFilePath;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissController:self.webviewController];
+        [self.webviewController dismissController:self.webviewController];
+    [self.configurationFilePathControl setURL:[NSURL URLWithString:configurationZipFilePath]];
+    });
     
 }
 
@@ -110,10 +133,11 @@
         NSLog(@"Cannot found project in path %@",workspcaePath);
         return NO;
     }
-    NSString* configurationFilePath = self.configurationPlistSelected;
+    NSString* configurationFilePath = self.configurationPlistSelected?self.configurationPlistSelected:self.lastDownloaedConfigurationFilePath;
+    
     NSString* pbxcprojPath = [workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName];
     [self moveConfigurationPlistFileIntoSourceRootWithCongfigurationFilePath:configurationFilePath workspacePath:workspcaePath];
-    [self insertPlistConfigurationFileIn:pbxcprojPath configurationFilePath:self.configurationPlistSelected];
+    [self insertPlistConfigurationFileIn:pbxcprojPath configurationFilePath:configurationFilePath];
 //    [self showAlertWithTitle:@"配置成功" content:@"请打开项目配置文件"];
 
     NSArray* fileList = [CocoaUtil findFilesWithExtension:@"plist" inFolder:workspcaePath];//[[NSFileManager defaultManager] contentsOfDirectoryAtPath:workspcaePath error:&error];
@@ -161,6 +185,7 @@
     }
     
     if (!infoPlist) {
+        [self showAlertWithTitle:@"配置失败" content:[NSString stringWithFormat:@"%@下面没找到Info.plist文件",currentPath]];
         NSLog(@"Info.plist not found in %@",workspcaePath);
     }
     if (!qqPlist) {
@@ -226,8 +251,9 @@
 }
 
 - (void)showWebview {
-    WebViewController* webviewController = [[WebViewController alloc] init];
-    [self presentViewControllerAsModalWindow:webviewController];
+    self.webviewController = [[WebViewController alloc] init];
+    [self presentViewControllerAsModalWindow:self.webviewController];
+    
 }
 
 - (void)showAlertWithTitle:(NSString*)title content:(NSString*)content {

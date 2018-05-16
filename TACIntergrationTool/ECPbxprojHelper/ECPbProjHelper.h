@@ -58,4 +58,13 @@
  @return rootObject
  */
 - (NSArray<NSString*>*) getTargets:(NSDictionary*)dict;
+
+
+/**
+ get all file reference in project
+
+ @param dictionary dictionary generated from project file
+ @return result
+ */
+- (NSArray<ECProjectFileReference*>*) getAllFileReferenceinDictionary:(NSDictionary*)dictionary;
 @end
