@@ -27,6 +27,16 @@
 
 - (NSDictionary*)insertQQSchemeIntoPlist:(NSDictionary*)infoPlist :(NSDictionary*)QQPlist;
 
+
+
+/**
+ insert an url scheme into types. If the scheme has already existed, the insertion will never be executed
+
+ @param schemeValue scheme value
+ @param infoPlist dictionary generated from info.plist file
+ @return dictionary with scheme inserted
+ */
+- (NSDictionary*)insertURLSChemeWithValue:(NSString*)schemeValue intoInfoPlist:(NSDictionary*)infoPlist;
 - (BOOL) writePlist:(NSDictionary*)plistDict intoPath:(NSString*)path;
 
 @end

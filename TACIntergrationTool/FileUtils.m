@@ -57,22 +57,41 @@
     
     NSString* URLTypesKey = @"CFBundleURLTypes";
     NSMutableDictionary* result = [infoPlist mutableCopy];
-    NSMutableArray* URLTypes = [result[@"CFBundleURLTypes"] mutableCopy];
-    if (URLTypes == nil) {
+    NSMutableArray* URLTypes ;
+    if (result[URLTypesKey]) {
+        URLTypes = [result[@"CFBundleURLTypes"] mutableCopy];
+    } else {
         URLTypes = [NSMutableArray array];
     }
     
-    
-    NSString* APPID = QQPlist[@"services"][@"social"][@"qq"][@"appId"] ;
-    NSString* QQWalletScheme = [NSString stringWithFormat:@"qqwallet--test--%@",APPID];
+    NSString* appIDKeyPath = @"services.social.qq.appId";
+//    NSString* APPID = QQPlist[@"services"][@"social"][@"qq"][@"appId"] ;
+    NSString* APPID = [QQPlist valueForKeyPath:appIDKeyPath];
+    NSString* QQWalletScheme = [NSString stringWithFormat:@"qqwallet%@",APPID];
     
     NSDictionary* QQWalletSchemeDictionary = @{@"CFBundleTypeRole":@"Editor",@"CFBundleURLName":QQWalletScheme,@"CFBundleURLSchemes":@[QQWalletScheme]};
     [URLTypes addObject:QQWalletSchemeDictionary];
     [result setValue:URLTypes forKey:URLTypesKey];
     
     return [result copy];
-    
 }
+
+
+- (NSDictionary*)insertURLSChemeWithValue:(NSString*)schemeValue intoInfoPlist:(NSDictionary*)infoPlist {
+    NSString* URLTypesKey = @"CFBundleURLTypes";
+    NSMutableDictionary* result = [infoPlist mutableCopy];
+    NSMutableArray* URLTypes ;
+    if (result[URLTypesKey]) {
+        URLTypes = [result[@"CFBundleURLTypes"] mutableCopy];
+    } else {
+        URLTypes = [NSMutableArray array];
+    }
+    NSDictionary* QQWalletSchemeDictionary = @{@"CFBundleTypeRole":@"Editor",@"CFBundleURLName":schemeValue,@"CFBundleURLSchemes":@[schemeValue]};
+    [URLTypes addObject:QQWalletSchemeDictionary];
+    [result setValue:URLTypes forKey:URLTypesKey];
+    return [result copy];
+}
+
 
 - (BOOL) writePlist:(NSDictionary*)plistDict intoPath:(NSString*)path {
     NSError* error;

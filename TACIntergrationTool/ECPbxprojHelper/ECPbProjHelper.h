@@ -15,8 +15,7 @@
 
 
 /**
- Insert build phases into project settings
-
+ Insert build phases into project settings. If the build phases already exist, the methods results in replacing existed build phases with the new one.
  @param buildPhases buildPhases entity class
  @param dictionary plistDictionary, which must be mutable
  @param index index that you would like to insert.There might be several build phases, and you have to specify an index which the build phases insertd located. Something might take attention here is that the index can be negative. Setting this value into -1 turns out putting build phase in last, -2 means putting build phase into the fronter one, etc. Index start from zero.

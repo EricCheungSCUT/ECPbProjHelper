@@ -26,6 +26,22 @@
 
 @end
 
+
+@interface WKNavigationAction(TencentCloud)
+- (BOOL)isDownloadConfigurationAction ;
+@end
+
+@implementation WKNavigationAction(TencentCloud)
+
+- (BOOL)isDownloadConfigurationAction {
+    if ([self.request.URL.lastPathComponent isEqualToString:@"download_config"]) {
+        return YES;
+    }
+    return NO;
+}
+
+@end
+
 @interface WebViewController ()<WKNavigationDelegate,WKScriptMessageHandler>
 @property(nonatomic,strong) WKWebView* webview;
 @end
@@ -36,7 +52,12 @@
     [super viewDidLoad];
     [self.view setFrame:NSMakeRect(0, 0, 2000, 1000)];
     [self.view addSubview:self.webview];
+    
+}
 
+- (void)viewDidDisappear {
+    [super viewDidDisappear  ];
+    
 }
 
 - (void) addUserScriptToUserContentController:(WKUserContentController *) userContentController{
@@ -60,13 +81,28 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     NSLog(@"NavigationResponse:%@\n",navigationResponse);
-    if ([navigationResponse isDownloadConfigurationResponse] ) {
-        [TencentCloudConfigDownloader  downloadConfigurationWithURL:navigationResponse.response.URL completionHandler:^(NSString *configurationZIPFilePath) {
-           // do nothing here
-        }];
-    }
+
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(nonnull WKNavigationAction *)navigationAction decisionHandler:(nonnull void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSLog(@"NavigationAction is %@",navigationAction);
+    if ([navigationAction isDownloadConfigurationAction ] ) {
+        __block NSProgressIndicator* indicator = [[NSProgressIndicator alloc] initWithFrame:self.view.bounds] ;
+        [indicator setStyle:NSProgressIndicatorSpinningStyle];
+        [self.view addSubview:indicator];
+        [indicator startAnimation:indicator];
+        [self.webview setAlphaValue:0.2f];
+        [TencentCloudConfigDownloader  downloadConfigurationWithURL:navigationAction.request.URL completionHandler:^(NSString *configurationZIPFilePath) {
+            // do nothing here
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [indicator removeFromSuperview];
+            });
+        }];
+    }
+        decisionHandler(WKNavigationActionPolicyAllow);
+}
+
 
 - (WKWebView *)webview {
     if (!_webview) {

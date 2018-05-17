@@ -195,11 +195,17 @@
         NSLog(@"Cannot found plist file that contains AppID of Wechat in %@",workspcaePath);
     }
     
-    if (!(infoPlist&&qqPlist&&wechatPlist)) {
-        return NO;
-    }
+//    if (!(infoPlist&&qqPlist&&wechatPlist)) {
+//        return NO;
+//    }
     
-    NSDictionary* resultInfoPlist = [[FileUtils sharedInstance] insertQQSchemeIntoPlist:infoPlist :qqPlist];
+    NSString* QQAppID = [qqPlist valueForKeyPath:@"services.social.qq.appId"];
+    NSString* wechatAPPID = [wechatPlist valueForKeyPath:@"services.social.wechat.appId"];
+//    NSDictionary* resultInfoPlist = [[FileUtils sharedInstance] insertQQSchemeIntoPlist:infoPlist :qqPlist];
+    NSDictionary* resultInfoPlist = [[FileUtils sharedInstance] insertURLSChemeWithValue:[@"qqwallet" stringByAppendingString:QQAppID] intoInfoPlist:infoPlist];
+    resultInfoPlist = [[FileUtils sharedInstance] insertURLSChemeWithValue:wechatAPPID intoInfoPlist:resultInfoPlist];
+    resultInfoPlist = [[FileUtils sharedInstance] insertURLSChemeWithValue:[@"tencent" stringByAppendingString:QQAppID] intoInfoPlist:resultInfoPlist];
+    
     NSString* destPath = [NSString stringWithFormat:@"%@Info.plist",currentPath];
     [[FileUtils sharedInstance] writePlist:resultInfoPlist intoPath:destPath];
     
@@ -215,11 +221,7 @@
     buildPhases.files = [NSArray array];
     buildPhases.inputPaths = [NSArray array];
     NSMutableDictionary* mutableDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:[workspcaePath stringByAppendingFormat:@"/%@.xcodeproj/project.pbxproj",projectName]];
-    
     [[ECPbProjHelper sharedInstance] insertBuildPhase:buildPhases inDictionary:mutableDictionary withIndex:0];
-    
-    
-    
     [[FileUtils sharedInstance] writePlist:mutableDictionary intoPath:pbxcprojPath];
 
     
